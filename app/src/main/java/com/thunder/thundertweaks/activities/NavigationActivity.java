@@ -127,6 +127,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.PriorityQueue;
 
 public class NavigationActivity extends BaseActivity
@@ -136,7 +137,7 @@ public class NavigationActivity extends BaseActivity
     public static final String INTENT_SECTION = PACKAGE + ".INTENT.SECTION";
 
     private ArrayList<NavigationFragment> mFragments = new ArrayList<>();
-    private Map<Integer, Class<? extends Fragment>> mActualFragments = new LinkedHashMap<>();
+    private final Map<Integer, Class<? extends Fragment>> mActualFragments = new LinkedHashMap<>();
 
     private DrawerLayout mDrawer;
     private NavigationView mNavigationView;
@@ -163,7 +164,7 @@ public class NavigationActivity extends BaseActivity
 
     private static class FragmentLoader extends AsyncTask<Void, Void, Void> {
 
-        private WeakReference<NavigationActivity> mRefActivity;
+        private final WeakReference<NavigationActivity> mRefActivity;
 
         private FragmentLoader(NavigationActivity activity) {
             mRefActivity = new WeakReference<>(activity);
@@ -332,7 +333,7 @@ public class NavigationActivity extends BaseActivity
         if (section != null) {
             for (Map.Entry<Integer, Class<? extends Fragment>> entry : mActualFragments.entrySet()) {
                 Class<? extends Fragment> fragmentClass = entry.getValue();
-                if (fragmentClass != null && fragmentClass.getCanonicalName().equals(section)) {
+                if (fragmentClass != null && Objects.equals(fragmentClass.getCanonicalName(), section)) {
                     mSelection = entry.getKey();
                     break;
                 }
@@ -408,7 +409,6 @@ public class NavigationActivity extends BaseActivity
     }
 
     private void setShortcuts() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N_MR1) return;
 
         PriorityQueue<Class<? extends Fragment>> queue = new PriorityQueue<>(
                 (o1, o2) -> {
@@ -491,7 +491,7 @@ public class NavigationActivity extends BaseActivity
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         outState.putParcelableArrayList("fragments", mFragments);
@@ -506,7 +506,7 @@ public class NavigationActivity extends BaseActivity
 
     private void onItemSelected(final int res, boolean saveOpened) {
         mDrawer.closeDrawer(GravityCompat.START);
-        getSupportActionBar().setTitle(getString(res));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(res));
         mNavigationView.setCheckedItem(res);
         mSelection = res;
         final Fragment fragment = getFragment(res);
@@ -519,10 +519,8 @@ public class NavigationActivity extends BaseActivity
         setShortcuts();
 
         mDrawer.postDelayed(()
-                        -> {
-                    getSupportFragmentManager().beginTransaction().replace(
-                            R.id.content_frame, fragment, res + "_key").commitAllowingStateLoss();
-                },
+                        -> getSupportFragmentManager().beginTransaction().replace(
+                                R.id.content_frame, fragment, res + "_key").commitAllowingStateLoss(),
                 250);
     }
 
@@ -531,7 +529,7 @@ public class NavigationActivity extends BaseActivity
         Fragment fragment = fragmentManager.findFragmentByTag(res + "_key");
         if (fragment == null && mActualFragments.containsKey(res)) {
             fragment = Fragment.instantiate(this,
-                    mActualFragments.get(res).getCanonicalName());
+                    Objects.requireNonNull(Objects.requireNonNull(mActualFragments.get(res)).getCanonicalName()));
         }
         return fragment;
     }
@@ -540,7 +538,7 @@ public class NavigationActivity extends BaseActivity
 
         public int mId;
         public Class<? extends Fragment> mFragmentClass;
-        private int mDrawable;
+        private final int mDrawable;
 
         NavigationFragment(int id) {
             this(id, null, 0);
@@ -558,6 +556,7 @@ public class NavigationActivity extends BaseActivity
             mDrawable = parcel.readInt();
         }
 
+        @NonNull
         @Override
         public String toString() {
             return String.valueOf(mId);
@@ -575,7 +574,7 @@ public class NavigationActivity extends BaseActivity
             dest.writeInt(mDrawable);
         }
 
-        public static final Creator CREATOR = new Creator<NavigationFragment>() {
+        public static final Creator<? extends NavigationFragment> CREATOR = new Creator<NavigationFragment>() {
             @Override
             public NavigationFragment createFromParcel(Parcel source) {
                 return new NavigationFragment(source);

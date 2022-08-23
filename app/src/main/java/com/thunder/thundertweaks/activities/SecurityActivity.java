@@ -20,12 +20,10 @@
 package com.thunder.thundertweaks.activities;
 
 import android.app.KeyguardManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -102,8 +100,7 @@ public class SecurityActivity extends BaseActivity {
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                && AppSettings.isFingerprint(this)) {
+        if (AppSettings.isFingerprint(this)) {
             mFingerprintManagerCompat = FingerprintManagerCompat.from(this);
             if (mFingerprintManagerCompat.isHardwareDetected()
                     && mFingerprintManagerCompat.hasEnrolledFingerprints()
@@ -113,7 +110,6 @@ public class SecurityActivity extends BaseActivity {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void loadFingerprint() {
         try {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
