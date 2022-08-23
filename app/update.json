@@ -1,9 +1,9 @@
 {
-  "latestVersion": "2.2.2",
-  "latestVersionCode": "222",
-  "url": "https://github.com/corsicanu/hKtweaks/releases/download/v2.2.2/hKtweaks_v2.2.2.apk",
+  "latestVersion": "1.0.01",
+  "latestVersionCode": "1000",
+  "url": "https://github.com/LeeXDA21/UnboundTweaks/releases/download/v1.0.0/uKtweaks_v1.0.0.apk",
   "releaseNotes": [
     "Changelog:",
-    "- fix crashes when changing frequencies, disabling/enabling wakelocks and probably others"
+    "- Initial release"
   ]
 }
