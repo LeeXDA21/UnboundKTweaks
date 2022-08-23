@@ -9,16 +9,12 @@
 package com.bvalosek.cpuspy;
 
 import android.os.SystemClock;
-import androidx.annotation.NonNull;
 import android.util.SparseArray;
 
-import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
-import com.thunder.thundertweaks.utils.Log;
+import androidx.annotation.NonNull;
+
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.kernel.cpu.CPUFreq;
-import com.thunder.thundertweaks.utils.kernel.gpu.GPUFreq;
-import com.thunder.thundertweaks.utils.kernel.gpu.GPUFreqExynos;
-import com.thunder.thundertweaks.utils.kernel.gpu.GPUFreqTmu;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,8 +52,8 @@ public class CpuStateMonitor {
      */
     public static class CpuState implements Comparable<CpuState> {
 
-        private int mFreq = 0;
-        private long mDuration = 0;
+        private final int mFreq;
+        private final long mDuration;
 
         /**
          * init with freq and duration
@@ -218,7 +214,7 @@ public class CpuStateMonitor {
         long sleepTime = (SystemClock.elapsedRealtime() - SystemClock.uptimeMillis()) / 10;
         mStates.add(new CpuState(0, sleepTime));
 
-        Collections.sort(mStates, Collections.reverseOrder());
+        mStates.sort(Collections.reverseOrder());
     }
 
     /**
