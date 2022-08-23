@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 32
+    compileSdk 33
     buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId 'com.unbound.UnboundKtweaks'
         minSdk 31
-        targetSdk 32
+        targetSdk 33
         versionCode 1000
         versionName "1.0.0"
         vectorDrawables.useSupportLibrary = true
