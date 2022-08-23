@@ -38,6 +38,11 @@ public class CpuStateMonitor {
         mCore = core;
     }
 
+    public CpuStateMonitor(int core, int mCore, String mGpu) {
+        this.mCore = mCore;
+        this.mGpu = mGpu;
+    }
+
     /**
      * exception class
      */
