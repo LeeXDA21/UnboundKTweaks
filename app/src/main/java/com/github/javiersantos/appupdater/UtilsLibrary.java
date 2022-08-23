@@ -22,7 +22,7 @@ import com.github.javiersantos.appupdater.objects.GitHub;
 import com.github.javiersantos.appupdater.objects.Update;
 import com.github.javiersantos.appupdater.objects.Version;
 import com.hades.hKtweaks.R;
-import com.hades.hKtweaks.utils.Utils;
+import com.thunder.thundertweaks.utils.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,7 +31,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 import okhttp3.OkHttpClient;
@@ -163,7 +162,7 @@ class UtilsLibrary {
         try {
             Response response = client.newCall(request).execute();
             body = response.body();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(body.byteStream(), StandardCharsets.UTF_8));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(body.byteStream(), "UTF-8"));
             StringBuilder str = new StringBuilder();
 
             String line;
@@ -354,7 +353,7 @@ class UtilsLibrary {
         intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         Uri uriFile;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            uriFile = FileProvider.getUriForFile(context, "com.hades.hKtweaks.provider", file);
+            uriFile = FileProvider.getUriForFile(context, "com.thunder.thundertweaks.provider", file);
         } else {
             uriFile = Uri.fromFile(file);
         }
@@ -363,7 +362,7 @@ class UtilsLibrary {
 
     }
 
-    private static final BroadcastReceiver downloadReceiver = new BroadcastReceiver() {
+    private static BroadcastReceiver downloadReceiver = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {

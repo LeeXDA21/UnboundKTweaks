@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import android.util.Log;
 
 public class Version implements Comparable<Version> {
-    private final String version;
+    private String version;
 
     public final String get() {
         return this.version;

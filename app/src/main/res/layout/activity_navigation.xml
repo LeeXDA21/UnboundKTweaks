@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.hades.hKtweaks.activities.NavigationActivity"
+    tools:context="com.thunder.thundertweaks.activities.NavigationActivity"
     tools:openDrawer="start">
 
     <FrameLayout
@@ -33,7 +33,6 @@
         android:fitsSystemWindows="true"
         android:focusable="false"
         android:theme="@style/ItemTextAppearance"
-        android:background="?colorSecondary"
         app:headerLayout="@layout/nav_header_layout" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

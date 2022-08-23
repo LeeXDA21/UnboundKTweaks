@@ -9,7 +9,7 @@ import com.github.javiersantos.appupdater.objects.GitHub;
 import com.github.javiersantos.appupdater.objects.Update;
 
 public class AppUpdaterUtils {
-    private final Context context;
+    private Context context;
     private UpdateListener updateListener;
     private AppUpdaterListener appUpdaterListener;
     private UpdateFrom updateFrom;

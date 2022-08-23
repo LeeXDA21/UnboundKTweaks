@@ -21,7 +21,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 class RssParser {
-    private final URL rssUrl;
+    private URL rssUrl;
 
     public RssParser(String url) {
         try {

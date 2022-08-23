@@ -169,7 +169,6 @@
   <string name="interval_summary">Intervalo mínimo que se aplica el potenciado de la CPU.</string>
   <string name="sync_threshold">Umbral de sincronización</string>
   <string name="sync_threshold_summary">Cuando la carga de CPU cruza el límite prefijado, la frecuencia actual aumenta a esta.</string>
-  <string name="ib_summary">Aumenta la CPU al pulsar la pantalla táctil. Las frecuencias y duraciones del aumento se calculan automáticamente.</string>
   <string name="ib_duration_ms">Duración ms</string>
   <string name="ib_freq_little">Boost Freq. LITTLE A53</string>
   <string name="ib_freq_big">Boost Freq. big A72</string>
@@ -186,7 +185,6 @@
   <string name="touch_boost_summary">Esto aumentará la velocidad mínima de la CPU si toca la pantalla o pulsa un botón.</string>
   <string name="big_cores_max_title">Permitir 4 Cores a máxima freq.</string>
   <string name="big_cores_max_summary">Permite a los 4 BIG Cores ir a la máxima freqcuencia, aumenta el rendimiento, pero consumira mas bateria</string>
-  <string name="fingerprint_boost_summary">Las CPU disponibles aumentarán a la máxima frecuencia al pulsar el sensor de huella.</string>
   <!-- CPU Voltage -->
   <string name="global_offset">Ajuste Global</string>
   <string name="override_vmin">Sobrescribir voltaje mínimo</string>
@@ -587,10 +585,21 @@
   <string name="moro_sound_summary">Puede ajustar la ganancia de auriculares y altavoz.\nHAGALO CON PRECAUCION!, un volumen excesivo puede dañar sus oidos o el altavoz.</string>
   <string name="earpiece_gain">Ganancia Auricular</string>
   <string name="earpiece_gain_summary">Necesita el mod DualSpeaker</string>
-  <string name="arizona_sound_sw">Control Principal</string>
+  <string name="arizona_sound_sw">Moro Sound</string>
   <string name="arizona_volume_title">Volumen</string>
   <string name="arizona_eq_title">Ecualizador</string>
   <string name="arizona_eq_sw">Ecualizador</string>
+  <string name="moro_sound_dual_speaker_desc">Habilita el auricular como segundo altavoz</string>
+  <string name="moro_sound_headphone_mono">Sonido Mono</string>
+  <string name="moro_sound_headphone_mono_desc">Habilite sonido mono en auriculares</string>
+  <string name="moro_sound_mic">Micrófonos</string>
+  <string name="moro_sound_mic_tit">Ajustar Micrófonos</string>
+  <string name="moro_sound_mic_up">Mic Superior</string>
+  <string name="moro_sound_mic_down">Mic Inferior</string>
+  <string name="moro_sound_mic_headphone">Mic Auriculares</string>
+  <string name="moro_sound_reset_message">¿Quieres resetear todos los controles a valores por defecto?</string>
+  <string name="moro_sound_reset_summary">Resetear a valores por defecto</string>
+  <string name="moro_sound_volume_control">Control Volumen</string>
   <!-- Grx Sound Control -->
   <string name="headphones_volume">Auriculares externos</string>
   <string name="left_headphone">Izquierdo</string>
@@ -802,7 +811,7 @@
   <string name="wkl_wakeup">Wakeups</string>
   <string name="wkl_order">Orden Wakelocks</string>
   <string name="wkl_order_summary">Seleccione el orden de listado de los Wakelocks.</string>
-  <string name="wkl_alert_title">ADVERTENCIA</string>
+  <string name="wkl_alert_title">ATENCION</string>
   <string name="wkl_alert_message">Los Wakelocks normalmente están ahí por una razón. Los programadores de controladores y aplicaciones seguramente tenían sus razones para incluir wakelocks en el código en ciertas áreas. Esto significa que, al bloquear algunos de ellos, puede presentarse problemas, y puede desencadenar extraños efectos secundarios y, en el peor de los casos, hacer que el sistema sea completamente inutilizable.\n\nBloquear wakelocks es responsabilidad exclusiva de usted.</string>
   <string name="wkl_alert_checkbox">MOSTRAR LA PROXIMA VEZ</string>
   <!-- Virtual Memory -->
@@ -823,12 +832,6 @@
   <string name="memory_pool_summary">Porcentaje de piscina de memoria de la memoria principal que puede ser usada como cache de página comprimido.</string>
   <string name="maximum_compression_ratio">Relación de compresión máxima</string>
   <string name="maximum_compression_ratio_summary">Relación de compresión máxima, expresada en porcentaje, de una página comprimida aceptable. Se rechazará cualquier página no comprimida al menos en esta relación.</string>
-  <string name="zram_comp_algorithm">Compresión ZRAM</string>
-  <string name="zram_comp_algorithm_summary">Desactive primero ZRAM para poder ajustar la compresión.</string>
-  <string name="zram_lzo">lzo</string>
-  <string name="zram_lz4">lz4</string>
-  <string name="zram_deflate">deflate</string>
-  <string name="zram_none">Algoritmo de compresión desconocido o ZRAM no soportada!</string>
   <!-- Entropy -->
   <string name="available">Disponible</string>
   <string name="poolsize">Tamaño del Pool</string>
@@ -1014,7 +1017,7 @@
   <string name="reset_data_dialog2_title">Reiniciar</string>
   <string name="reset_data_dialog2_message">Para evitar fallos en la configuración se recomienda reiniciar el sistema.\n\nQuieres reiniciar?\n</string>
   <string name="check_update_title">Comprobar actualización</string>
-  <string name="check_update_summary">Comprueba si existe nueva actualizacion de hKtweaks</string>
+  <string name="check_update_summary">Comprueba si existe nueva actualizacion de ThunderTweaks</string>
   <string name="fahrenheit_title">Fahrenheit</string>
   <string name="fahrenheit_summary">Usar fahrenheit para medir la temperatura.</string>
   <string name="force_english">Forzar idioma inglés</string>
@@ -1043,7 +1046,7 @@
   <string name="confirmation_notification">Notificación de la confirmación</string>
   <string name="apply_on_boot_confirmation_notification_summary">Después de aplicar en el arranque con notificación visible, se mostrara una notificación con la confirmación de que la aplicación en el arranque fue exitosa.</string>
   <string name="script">Secuencia de comandos</string>
-  <string name="apply_on_boot_script_summary">Utilizar un script de shell para aplicar la configuración. Sólo habilite esto si tienes problemas con aplicar en el arranque. Si el problema persiste después de habilitar esta opción, asegúrese de que ninguna otra aplicación esta en conflicto con hKtweaks.</string>
+  <string name="apply_on_boot_script_summary">Utilizar un script de shell para aplicar la configuración. Sólo habilite esto si tienes problemas con aplicar en el arranque. Si el problema persiste después de habilitar esta opción, asegúrese de que ninguna otra aplicación esta en conflicto con ThunderTweaks.</string>
   <string name="debugging">Depuración</string>
   <string name="logcat">Logcat</string>
   <string name="logcat_summary">Copiar Logcat a /sdcard/logcat.txt</string>
@@ -1053,7 +1056,7 @@
   <string name="driver_message_summary">Copiar mensaje del controlador (dmesg) en /sdcard/dmesg.txt</string>
   <string name="security">Seguridad</string>
   <string name="set_password">Establecer contraseña</string>
-  <string name="set_password_summary">Puede proteger hKtweaks estableciendo una contraseña. Cada vez que abra la aplicación, la tendrá que introducir. Si la olvida, simplemente elimine los datos de esta aplicación en los ajustes de su dispositivo. No se preocupe, no compartiremos su contraseña.</string>
+  <string name="set_password_summary">Puede proteger ThunderTweaks estableciendo una contraseña. Cada vez que abra la aplicación, la tendrá que introducir. Si la olvida, simplemente elimine los datos de esta aplicación en los ajustes de su dispositivo. No se preocupe, no compartiremos su contraseña.</string>
   <string name="delete_password">Eliminar contraseña</string>
   <string name="old_password">Contraseña antigua</string>
   <string name="new_password">Contraseña nueva</string>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:focusable="false">
 
-    <com.hades.hKtweaks.views.XYGraph
+    <com.thunder.thundertweaks.views.XYGraph
         android:id="@+id/usage_graph"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

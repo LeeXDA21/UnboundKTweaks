@@ -21,6 +21,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/cpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -29,14 +37,6 @@
                 android:maxLines="1"
                 android:text="@string/cpu"
                 android:textAllCaps="true"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/cpu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -48,6 +48,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/gpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -56,14 +64,6 @@
                 android:maxLines="1"
                 android:text="@string/gpu"
                 android:textAllCaps="true"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/gpu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -74,6 +74,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -82,14 +90,6 @@
                 android:maxLines="1"
                 android:text="@string/battery"
                 android:textAllCaps="true"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/battery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>

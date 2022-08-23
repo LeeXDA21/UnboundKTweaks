@@ -6,12 +6,14 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.RingtoneManager;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.app.NotificationCompat;
-import androidx.appcompat.app.AlertDialog;
+import android.os.Build;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.NotificationCompat;
+
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
+import com.google.android.material.snackbar.Snackbar;
 import com.hades.hKtweaks.R;
 
 import java.net.URL;
@@ -75,7 +77,7 @@ class UtilsDisplay {
 
     static void showUpdateAvailableNotification(Context context, String title, String content, UpdateFrom updateFrom, URL apk, int smallIconResourceId) {
         int pendingIntentFlags;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             pendingIntentFlags = PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE;
         } else {
             pendingIntentFlags = PendingIntent.FLAG_UPDATE_CURRENT;
@@ -100,7 +102,7 @@ class UtilsDisplay {
 
     static void showUpdateNotAvailableNotification(Context context, String title, String content, int smallIconResourceId) {
         int pendingIntentFlags;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             pendingIntentFlags = PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE;
         } else {
             pendingIntentFlags = PendingIntent.FLAG_CANCEL_CURRENT;

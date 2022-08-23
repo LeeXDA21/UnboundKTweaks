@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 class LibraryPreferences {
-    private final SharedPreferences sharedPreferences;
-    private final SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     static final String KeyAppUpdaterShow = "prefAppUpdaterShow";
     static final String KeySuccessfulChecks = "prefSuccessfulChecks";

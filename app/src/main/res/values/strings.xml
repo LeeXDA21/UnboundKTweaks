@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">hKtweaks</string>
+    <string name="app_name">ThunderTweaks</string>
 
     <string name="checking_info">Checking info…</string>
     <string name="checking_root">Checking root access</string>
@@ -9,7 +9,8 @@
     <string name="no_busybox">No busybox</string>
     <string name="open">Open %s</string>
     <string name="disable">Disable</string>
-    <string name="changelog">hKtweaks v%s</string>
+    <string name="changelog">ThunderTweaks v%s</string>
+    <string name="changelog_message">\n* Added some improvements\n \n* Added Snapdragon and S22 support\n</string>
     <string name="close">Close</string>
 
     <!-- Security -->
@@ -75,6 +76,7 @@
     <string name="percent">%</string>
     <string name="gb">GB</string>
     <string name="db">dB</string>
+    <string name="second">sec</string>
 
     <!-- Special signs -->
     <string name="minus" translatable="false">-</string>
@@ -100,7 +102,11 @@
     <string name="screen">Screen</string>
     <string name="wake">Wake</string>
     <string name="sound">Sound</string>
-    <string name="battery">Battery</string>
+	<string name="battery">Battery</string>
+	<string name="battery2">Battery 2</string>
+    <string name="battery3">Battery 3</string>
+    <string name="battery_saver">Kernel Side Battery Saver</string>
+    <string name="battery_saver_summary">This disables all soc boosts and chooses low cpu freqs</string>
     <string name="led">LED</string>
     <string name="io_scheduler">I/O Scheduler</string>
     <string name="ksm">Kernel Samepage Merging</string>
@@ -143,9 +149,10 @@
     <string name="error_frequencies">Failed to load frequencies</string>
     <string name="unused_frequencies">Unused Frequencies</string>
     <string name="gpu_usage">GPU Usage</string>
+	<string name="gpu_utilization">GPU Utilization</string>
 
     <!-- Device -->
-    <string name="manufactured_date">Manufacturing Date</string>
+    <string name="sar">System as root</string>
     <string name="processor">Processor</string>
     <string name="vendor">Vendor</string>
     <string name="features">Features</string>
@@ -162,6 +169,8 @@
     <string name="hardware">Hardware</string>
     <string name="architecture">Architecture</string>
     <string name="asv">ASV</string>
+	<string name="gpu_driver_info">GPU Kernel Driver Info</string>
+	<string name="gpu_driver_info_summary">RP15 - Nougat, RP22 - Oreo, RP28 - PIE, RP29 - Q.</string>
 
     <!-- Inputs -->
     <string name="bus">Bus</string>
@@ -185,6 +194,10 @@
     <string name="cpu_min_freq_summary">Set the minimum frequency the CPU scales down to.</string>
     <string name="cpu_max_screen_off_freq">CPU Maximum Screen Off Frequency</string>
     <string name="cpu_max_screen_off_freq_summary">Set the maximum frequency the CPU scales up to when the screen is off.</string>
+    <string name="cpu_max_suspend_freq">CPU Maximum Suspend Frequency</string>
+    <string name="cpu_max_suspend_freq_summary">Set the maximum frequency the CPU scales up to when the screen is off.</string>
+    <string name="cpu_min_suspend_freq">CPU Minimum Suspend Frequency</string>
+    <string name="cpu_min_suspend_freq_summary">Set the minimum frequency the CPU scales up to when the screen is off.</string>
     <string name="cpu_governor">CPU Governor</string>
     <string name="cpu_governor_summary">The CPU governor determines how the CPU behaves in response to changes in workload. Changing the governor will impact how the CPU scales through the frequency steps available to your CPU.</string>
     <string name="cpu_governor_tunables">CPU Governor Tunables</string>
@@ -213,7 +226,6 @@
     <string name="sync_threshold">Sync Threshold</string>
     <string name="sync_threshold_summary">When CPU loading crosses the preset threshold, the current CPU is raised to this frequency.</string>
     <string name="ib_enabled">CPU Input Boost</string>
-    <string name="ib_summary">Boosts the CPU on touchscreen input. Boost frequencies and durations are calculated automatically.</string>
     <string name="ib_duration_ms">Duration ms</string>
     <string name="ib_freq_little">Boost Freq. LITTLE</string>
     <string name="ib_freq_big">Boost Freq. big</string>
@@ -228,10 +240,29 @@
     <string name="hotplug_boost_summary">Hotplug Boost is similar to input boost but it occurs when CPUs go online.</string>
     <string name="touch_boost">Touch Boost</string>
     <string name="touch_boost_summary">This will boost your minimum CPU speed if you touch the screen or press a button.</string>
+	<string name="fingerprint_boost">Fingerprint Boost</string>
+    <string name="fingerprint_boost_summary">This will boost your minimum CPU speed if you touch the fingerprint (HOME) button.</string>
     <string name="big_cores_max_title">Allow 4 Cores to máx freq.</string>
-    <string name="big_cores_max_summary">Allows the 4 BIG Cores to go to the maximum frequency, increases the performance, but will consume more battery</string>
-    <string name="fingerprint_boost">Fingerprint Boost</string>
-    <string name="fingerprint_boost_summary">Boosts available CPUs to max frequency on fingerprint sensor input.</string>
+    <string name="big_cores_max_summary">Allows the 4 BIG Cores to go to the maximum frequency, increases the performance, but will consume more battery.</string>
+    <string name="iib_enabled">CPU Input Boost</string>
+    <string name="iib_duration_ms">CPU Input Boost Duration ms</string>
+    <string name="iib_freq_hp">Boost Freq. big Cluster</string>
+    <string name="iib_freq_lp">Boost Freq. LITTLE Cluster</string>
+    <string name="iib_freq_ml">Boost Max Freq. LITTLE Cluster</string>
+    <string name="iib_freq_mp">Boost Max Freq. big Cluster</string>
+    <string name="iid_enabled">Dev Freq Boost</string>
+    <string name="iid_duration_ms">Dev Freq Boost Duration ms</string>
+    <string name="iid_duration_ms_summary">Duration Boost of Devfreq in ms.</string>
+    <string name="iid_duration_freq">Dev Freq Boost Frequency - available freq\'s\: 208000, 286000, 421000, 546000, 676000, 845000, 1014000, 1144000, 1352000, 1539000, 1716000, 1794000.</string>
+    <string name="iid_duration_freq_summary">Available Frequencies: 208000, 286000, 421000, 546000, 676000, 845000, 1014000, 1144000, 1352000, 1539000, 1716000, 1794000.</string>
+    <string name="freq_susp_enable">CPU min/max Suspend Frequency</string>
+    <string name="freq_susp_enable_summary">CPU Suspend Frequency - enable or disable min/max screen off for each CPU.</string>
+    <string name="kernel_tun_switch_title">List of KERNEL tunables</string>
+    <string name="kernel_tun_switch_summary">Choose between displaying list with the most common settings, or all available settings (for advanced users).</string>
+    <string name="kernel_tun_tit_all">All settings</string>
+    <string name="kernel_tun_tit_common">Common settings</string>
+    <string name="kernel_tunnables">KERNEL Tunnables</string>
+    <string name="kernel_tunables">KERNEL Tunables</string>
 
     <!-- CPU Voltage -->
     <string name="global_offset">Global Offset</string>
@@ -378,32 +409,38 @@
     <string name="cpu_up_rate">CPU Up Rate</string>
     <string name="freq_1_1"> The frequency at which the other (instead of x the # of the core) core is hotplugged in - turned on (probably based on the frequency of the previous core or core 0)</string>	
     <string name="freq_2_0"> The frequency at which the other (instead of x the #-1 of the core) core is hotplugged out - turned off (probably based on the frequency of the previous core or core 0)</string>
-    <string name="freq_2_1"> The frequency at which the other (instead of x the # of the core) core is hotplugged in - turned on (probably based on the frequency of the previous core or core 0)</string>	
+	<string name="freq_2_1"> The frequency at which the other (instead of x the # of the core) core is hotplugged in - turned on (probably based on the frequency of the previous core or core 0)</string>	
     <string name="freq_3_0"> The frequency at which the other (instead of x the #-1 of the core) core is hotplugged out - turned off (probably based on the frequency of the previous core or core 0)</string>	
-    <string name="freq_3_1"> The frequency at which the other (instead of x the # of the core) core is hotplugged in - turned on (probably based on the frequency of the previous core or core 0)</string>	
+	<string name="freq_3_1"> The frequency at which the other (instead of x the # of the core) core is hotplugged in - turned on (probably based on the frequency of the previous core or core 0)</string>	
     <string name="freq_4_0"> The frequency at which the other (instead of x the #-1 of the core) core is hotplugged out - turned off (probably based on the frequency of the previous core or core 0)</string>	
-    <string name="load_1_1"> The % of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
-    <string name="load_2_0"> The % of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
-    <string name="load_2_1"> The % of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
-    <string name="load_3_0"> The % of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
-    <string name="load_3_1"> The % of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
-    <string name="load_4_0"> The % of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
-    <string name="rate_1_1"> The rate of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
-    <string name="rate_2_0"> The rate of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
-    <string name="rate_2_1"> The rate of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
-    <string name="rate_3_0"> The rate of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
-    <string name="rate_3_1"> The rate of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
-    <string name="rate_4_0"> The rate of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
-    <string name="rq_1_1"> The time reserved for each process in the queue for scale up.</string>
-    <string name="rq_2_0"> The time reserved for each process in the queue for scale down.</string>
-    <string name="rq_2_1"> The time reserved for each process in the queue for scale up.</string>
-    <string name="rq_3_0"> The time reserved for each process in the queue for scale down.</string>	
-    <string name="rq_3_1"> The time reserved for each process in the queue for scale up.</string>
-    <string name="rq_4_0"> The time reserved for each process in the queue for scale down.</string>	
+	<string name="load_1_1"> The % of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
+	<string name="load_2_0"> The % of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
+	<string name="load_2_1"> The % of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
+	<string name="load_3_0"> The % of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
+	<string name="load_3_1"> The % of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
+	<string name="load_4_0"> The % of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
+	<string name="rate_1_1"> The rate of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
+	<string name="rate_2_0"> The rate of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
+	<string name="rate_2_1"> The rate of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
+	<string name="rate_3_0"> The rate of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
+	<string name="rate_3_1"> The rate of load of the core (instead of x the # of the core) the frequency for the core is scaled up.</string>
+	<string name="rate_4_0"> The rate of load of the core (instead of y the #-1 of the core) the frequency for the core is scaled down.</string>
+	<string name="rq_1_1"> The time reserved for each process in the queue for scale up.</string>
+	<string name="rq_2_0"> The time reserved for each process in the queue for scale down.</string>
+	<string name="rq_2_1"> The time reserved for each process in the queue for scale up.</string>
+	<string name="rq_3_0"> The time reserved for each process in the queue for scale down.</string>	
+	<string name="rq_3_1"> The time reserved for each process in the queue for scale up.</string>
+	<string name="rq_4_0"> The time reserved for each process in the queue for scale down.</string>	
     <string name="samsungPlug">SamsungPlug</string>
     <string name="samsungPlug_summary">An in-kernel Samsung Stock Hotplugging</string>
     <string name="samsungPlug_max_cpu">Maximum turned On cores</string>
-    <string name="samsungPlug_min_cpu">Minimum turned On cores</string>
+	<string name="samsungPlug_min_cpu">Minimum turned On cores</string>
+	<string name="samsungPlug_DualChangeMs">Dual Change in Ms</string>
+	<string name="samsungPlug_LitMultRatio">Lit Multi Ratio</string>
+	<string name="samsungPlug_ToDualRatio">To Dual Ratio</string>
+	<string name="samsungPlug_ToQuadRatio">To Quad Ratio</string>
+	<string name="samsungPlug_BigModeDual">Big Mode DUAL - CPU works in DUAL big cluster mode. Values 6 to 7.</string>
+	<string name="samsungPlug_BigModeNormal">Big Mode Normal - CPU works in Normal big cluster mode. Values 5 to 6.</string>
     <string name="thunderplug">ThunderPlug</string>
     <string name="thunderplug_summary">An in-kernel replacement for Qualcomm\'s hotplugging. Developed by varunchitre15.</string>
     <string name="min_cpu_online_screen_off">Minimum CPU Screen Off</string>
@@ -476,6 +513,15 @@
     <string name="hmp_down_threshold">Down Threshold</string>
     <string name="hmp_down_threshold_summary">Max load allowed for tasks migrating to the slower little cores.</string>
     <string name="hmp_profile_summary">Select your profile for HMP thresholds.</string>
+	<string name="hmp_sb_up_threshold">Sb Up Threshold</string>
+	<string name="hmp_sb_down_threshold">Sb Down Threshold</string>
+	<string name="hmp_down_comp_threshold">Down Compensation Threshold</string>
+	<string name="hmp_down_comp_timeout">Down Compensation Timeout</string>
+	<string name="hmp_down_comp_hight_freq">Down Compensation High Frequency</string>
+	<string name="hmp_down_comp_mid_freq">Down Compensation Mid Frequency</string>
+	<string name="hmp_down_comp_low_freq">Down Compensation Low Frequency</string>
+	<string name="hmp_boost">Boost HMP - turn off/on 2 Big cores</string>
+	<string name="hmp_comp_enable">Enable/Disable Compensation for LITTLE cores</string>
 
     <!--Thermal-->
     <string name="thermal_info">Use only one thermal driver from the following options, using more at the same time may cause unexpected behavior.</string>
@@ -554,6 +600,7 @@
     <string name="tun_highspeed_delay">GPU Highspeed Delay</string>
     <string name="tun_highspeed_delay_summary">Jump the minimum frequency level to highspeed_clock when the GPU utilization over highspeed_load and over this delayed value.</string>
     <string name="gov_tunables">Governor Tunables</string>
+    <string name="gpu_volt">GPU Voltage</string>
     <string name="gpu_voltage">GPU Voltage Control</string>
     <string name="gpu_volts">GPU Voltages</string>
     <string name="gpu_throttling">GPU Thermal Control</string>
@@ -561,15 +608,17 @@
     <string name="gpu_tmu">GPU Thermal Manager</string>
     <string name="gpu_tmu_summary">Your own risk to disable…</string>
     <string name="gpu_throttling1">GPU LEVEL 1 Throttling Freq</string>
-    <string name="gpu_throttling1_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq if GPU temp is 90°C</string>
+    <string name="gpu_throttling1_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 1st step</string>
     <string name="gpu_throttling2">GPU LEVEL 2 Throttling Freq</string>
-    <string name="gpu_throttling2_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq if GPU temp is 95°C</string>
+    <string name="gpu_throttling2_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 2nd step</string>
     <string name="gpu_throttling3">GPU LEVEL 3 Throttling Freq</string>
-    <string name="gpu_throttling3_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq if GPU temp is 100°C</string>
+    <string name="gpu_throttling3_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 3rd step</string>
     <string name="gpu_throttling4">GPU LEVEL 4 Throttling Freq</string>
-    <string name="gpu_throttling4_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq if GPU temp is 105°C</string>
+    <string name="gpu_throttling4_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 4th step</string>
+	<string name="gpu_throttling5">GPU LEVEL 5 Throttling Freq</string>
+    <string name="gpu_throttling5_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 5th step</string>
     <string name="gpu_tripping">GPU Tripping Freq</string>
-    <string name="gpu_tripping_summary">Exynos TMU control trip GPU freq to this freq if GPU temp is 110°C</string>
+    <string name="gpu_tripping_summary">Exynos TMU control trip GPU freq to this freq for GPU temp - 6th step</string>
     <string name="gpu_power_policy_card">GPU Power Policy Control</string>
     <string name="gpu_power_policy">Mali Power Policy Control</string>
     <string name="gpu_power_policy_summary">COARSE DEMAND power policy is to control only external power (PMU for G3D). It is better at saving power and performance. COARSE DEMAND turns off GPU power in case of being no job for 100ms and turns it on in case of incomming first job on the state of GPU off. Default is coarse_demand.</string>
@@ -582,6 +631,8 @@
     <string name="gpu_driver_version">Kernel Driver</string>
     <string name="gpu_lib_version">System Libs</string>
     <string name="gpu_driver_title">GPU Driver Info</string>
+    <string name="gpu_dvfs">GPU DVFS</string>
+	<string name="gpu_dvfs_summary">GPU DVFS support ON or OFF. This makes lower usage GPU for working UI and can give little less battery drain.</string>
 
     <!-- Screen -->
     <string name="screen_color">Screen Color</string>
@@ -727,7 +778,7 @@
     <string name="earpiece_gain">Earpiece Gain</string>
     <string name="earpiece_gain_summary">You need the DualSpeaker mod</string>
     <string name="arizona_title">Arizona Control Sound</string>
-    <string name="arizona_sound_sw">Main Control</string>
+    <string name="arizona_sound_sw">Moro Sound</string>
     <string name="arizona_sound_sw_summary_on">Enable or Disable the sound control\nEnabled</string>
     <string name="arizona_sound_sw_summary_off">Enable or Disable the sound control\nDisabled</string>
     <string name="arizona_volume_title">Volume</string>
@@ -759,6 +810,19 @@
     <string name="arizona_eq_prof4">Eargasm</string>
     <string name="arizona_mono_tit">Mono Mixer</string>
     <string name="arizona_mono_desc">Mixes together left and right channels</string>
+    <string name="moro_sound_dual_speaker">Dual Speaker</string>
+    <string name="moro_sound_dual_speaker_desc">Enable the earpiece as a second speaker</string>
+    <string name="moro_sound_headphone_mono">Mono Sound</string>
+    <string name="moro_sound_headphone_mono_desc">Enable mono sound in headphones</string>
+    <string name="moro_sound_mic">Microphones</string>
+    <string name="moro_sound_mic_tit">Adjust Microphones</string>
+    <string name="moro_sound_mic_up">Mic Up</string>
+    <string name="moro_sound_mic_down">Mic Down</string>
+    <string name="moro_sound_mic_headphone">Mic Headphones</string>
+    <string name="moro_sound_reset_message">Do you want to reset all controls to default value?</string>
+    <string name="moro_sound_reset">Reset</string>
+    <string name="moro_sound_reset_summary">Reset to default values</string>
+    <string name="moro_sound_volume_control">Volume Control</string>
 
     <!-- Grx Sound Control -->
     <string name="headphones_volume">HeadPhones</string>
@@ -792,12 +856,14 @@
     <string name="health">Health</string>
     <string name="capacity">Capacity</string>
     <string name="usb_fast_charge">USB Fast Charge</string>
-    <string name="adaptive_fast_charge">Adaptive Fast Charge</string>
+	<string name="adaptive_fast_charge">Adaptive Fast Charge</string>
     <string name="unstable_charge_card">Unstable Charge</string>
     <string name="enable_unstable_charge">Enable Unstable Power Detection</string>
     <string name="enable_unstable_charge_summary">If disabled, the charger chip will ignore unstable currents. Use at risk of your charger or charging ports. Unstable power detection will reduce the input current until a stable voltage from the power source is achieved.</string>
     <string name="usb_fast_charge_summary">Device will charge faster when connected with USB. Replug your charger when changing this option.</string>
-    <string name="adaptive_fast_charge_summary">Device will charge faster when this option is enabled. Replug your charger when changing this option.</string>
+	<string name="adaptive_fast_charge_summary">Device will charge faster when this option is enabled. Replug your charger when changing this option.</string>
+    <string name="usb_charge_bypass">Bypass Charging</string>
+    <string name="usb_charge_bypass_summary">Use power directly from charger without charging/discharging the battery.</string>
     <string name="blx">Battery Life eXtender</string>
     <string name="blx_summary">Set a limit for the capacity to which the battery will be charged by passing a value between 0 and 100.</string>
     <string name="charge_rate">Charge Rate</string>
@@ -819,6 +885,9 @@
     <string name="wireless_power">Wireless Power</string>
     <string name="wc_input">Wireless Input Current</string>
     <string name="wc_charge">Wireless Charge Current</string>
+    <string name="power_sharing">Power Share System</string>
+    <string name="ps_input">Power Share Input Current</string>
+    <string name="ps_charge">Power Share Charge Current</string>
     <string name="car_dock">Car Dock</string>
     <string name="car_input">Car Dock Input Curent</string>
     <string name="car_charge">Car Dock Charge Current</string>
@@ -835,6 +904,7 @@
     <string name="cs_wireless">Wireless Charging</string>
     <string name="cs_hv_wireless">HV Wireless Charging</string>
     <string name="cs_pma_wireless">PMA Wireless Charging</string>
+    <string name="cs_power_share">Power Share Charging</string>
     <string name="cs_car">Car Dock Charging</string>
     <string name="cs_uart_off">UART Off Charging</string>
     <string name="cs_otg">OTG Charging</string>
@@ -863,20 +933,37 @@
     <string name="cs_pdic">Pdic Charging</string>
     <string name="cs_qc20">QC20 Rapid Charge</string>
     <string name="cs_qc30">QC30 Rapid Charge</string>
+    <string name="limitCapacity">Limit Battery Capacity While Charging</string>
 
     <!-- SPECTRUM -->
     <string name="spectrum">Spectrum</string>
     <string name="profileTile">Spectrum Profile</string>
     <string name="spec_title">SPECTRUM Profile Manager</string>
-    <string name="spec_info">Adaptation of the Spectrum Manager of frap129.\nSelect one of the 4 predefined profiles.</string>
+    <string name="spec_info">Adaptation of the Spectrum Manager of frap129.\nSelect one of some predefined profiles.</string>
     <string name="spec_balanced">Balanced</string>
-    <string name="spec_balanced_summary">The default kernel profile, known for its smooth performance in basic tasks while maintaining fantastic battery.</string>
+    <string name="spec_balanced_summary">The default stock kernel profile, known for its smooth performance in basic tasks while maintaining good battery.</string>
     <string name="spec_performance">Performance</string>
     <string name="spec_performance_summary">Tuned for top tier performance in standard tasks with many less regressions than Balanced, but maintains battery by limiting graphics.</string>
     <string name="spec_battery">Battery</string>
     <string name="spec_battery_summary">Ultra-conservative profile that lets performance take a hit in order to achieve long-lasting battery life.</string>
     <string name="spec_gaming">Gaming</string>
     <string name="spec_gaming_summary">Need that extra 10 FPS? I got you. Identical to performance in most areas other than the unlocked Graphics performance.</string>
+    <string name="spec_thunder">ThundeRStormS - I with AutoSMP</string>
+    <string name="spec_thunder_summary">Thunder - balanced profile uses AutoSMP hotplug that lets performance take a hit in order to achieve long-lasting battery life with balanced performance. Edited by XDA@nalas.</string>
+    <string name="spec_thunderg">ThundeRStormS - Game Over</string>
+    <string name="spec_thunderg_summary">Thunder - conservative profile made by Game Over that lets to achieve long-lasting battery life with balanced performance. Edited by XDA@nalas and Game Over.</string>
+    <string name="spec_thunderk">ThundeRStormS - Kevin with AutoSMP</string>
+    <string name="spec_thunderk_summary">Thunder - conservative profile made by Kevin that lets to achieve long-lasting battery life with balanced performance. Edited by XDA@nalas and Kevin.</string>
+    <string name="spec_thunderr">ThundeRStormS - rtakak with AutoSMP</string>
+    <string name="spec_thunderr_summary">Tuned Profile by rtakak for better better battery life with good game performance. Profile uses rtakak profile base and AutoSMP Plug for this purpose. rtakak profile edited by rtakak and XDA@nalas.</string>
+    <string name="spec_thunders">ThundeRStormS - Shariq</string>
+    <string name="spec_thunders_summary">Smooth Tuned Profile by Shariq that lets you achieve the long battery life with enhanced Performance. Edited by XDA@nalas and Shariq.</string>
+    <string name="spec_thunderf">ThundeRStormS - Franz</string>
+    <string name="spec_thunderf_summary">Tuned Profile by Franz that lets you achieve the long battery life with balanced Performance uses Samsung Plug and lower max CPUs frequencies. Edited by XDA@nalas and Franz.</string>
+    <string name="spec_thunder2">ThundeRStormS - II</string>
+    <string name="spec_thunder2_summary">Thunder II - more conservative profile uses Samsung Plug that lets performance take a hit in order to achieve long-lasting battery life with balanced performance. Edited by XDA@nalas.</string>
+    <string name="spec_thundera">ThundeRStormS - Ankit</string>
+    <string name="spec_thundera_summary">Ankit - more conservative profile uses Samsung Plug in order to achieve long-lasting battery life with balanced performance. Edited by XDA@nalas and Ankit.</string>
 
     <!-- LED -->
     <string name="fade">Fade</string>
@@ -966,6 +1053,13 @@
     <string name="dvfs_decision_mode_summary">CPU DVFS min/max limitation determined by decision mode.</string>
     <string name="dvfs_thermal_control">DVFS Thermal Control</string>
     <string name="dvfs_thermal_control_summary">CPU DVFS min/max limitation determined by temperature.</string>
+	<string name="dvfs_mif_control">DVFS MIF Control</string>
+    <string name="mif_min_freq">MIF DVFS min frequency.</string>
+    <string name="mif_max_freq">MIF DVFS max frequency.</string>
+    <string name="mif_min_freq_summary">MIF DVFS min frequency limitation.</string>
+    <string name="mif_max_freq_summary">MIF DVFS max frequency limitation.</string>	
+	
+	mif_max_freq_summary
 
     <!-- Wakelock -->
     <string name="wakelock_nav">Wakelock</string>
@@ -976,8 +1070,16 @@
     <string name="wkl_ssp_summary">The SSP Wakelock is one of the biggest wake sources after Sensorhub. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
     <string name="wkl_gps">GPS</string>
     <string name="wkl_gps_summary">The bcm4359 Wakelock (GPS chip) is one of the biggest wake sources after Sensorhub &amp; SSP. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
+    <string name="wkl_mmc0">SD Card Detect - MMC0</string>
+    <string name="wkl_mmc0_summary">The MMC0 Wakelock (SD Card) Disable for better deep sleep and less awake time. Enable for stock behavior.\n Keep this turned ON - if is OFF some bugs may be. </string>
     <string name="wkl_wireless">Wireless</string>
     <string name="wkl_wireless_summary">Wireless Wakelock. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
+    <string name="wkl_wireless1">Wireless Control</string>
+    <string name="wkl_wireless1_summary">Wireless Control Wakelock. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
+    <string name="wkl_wireless2">Wireless RX</string>
+    <string name="wkl_wireless2_summary">Wireless RX Wakelock. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
+    <string name="wkl_wireless3">Wireless WD</string>
+    <string name="wkl_wireless3_summary">Wireless WD Wakelock. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
     <string name="wkl_bluetooth">Bluetooth</string>
     <string name="wkl_bluetooth_summary">Bluetooth Wakelock. Disable for better deep sleep and less awake time. Enable for stock behavior.</string>
     <string name="wkl_battery">Battery polling</string>
@@ -1021,8 +1123,13 @@
     <string name="zram_comp_algorithm_summary">First disable ZRAM to be able to adjust this setting.</string>
     <string name="zram_lzo">lzo</string>
     <string name="zram_lz4">lz4</string>
+    <string name="zram_lzo_rle">lzo-rle</string>
     <string name="zram_deflate">deflate</string>
     <string name="zram_none">Unknown compression algorithm or zram not supported!</string>
+	<string name="zram_dialog">If the swap is very full it will take several minutes to empty and disable and it will block the app, for this reason the application will be closed.\n\nDo you want to disable the Swap and close the app?</string>
+    <string name="vnswap">VNSWAP</string>
+	<string name="vnswapd">VNSWAP - Samsung\'s replacement for ZRAM. It compresses 50% of your RAM in order to provide a smoother multitasking experience at a cost of slightly reduced power efficiency. It comes enabled by default in recent Samsung devices and it is not recommended to be disabled. </string>
+    <string name="vnswap_summary">Enable or disable VNSWAP</string>
 
     <!-- Entropy -->
     <string name="available">Available</string>
@@ -1091,6 +1198,11 @@
     <string name="pwm">PWM Flicker Free</string>
     <string name="pwm_summary">Reduces negative impact on eyesight</string>
     <string name="wireguard_title">WireGuard VPN</string>
+    <string name="cpuset">CPU Sets</string>
+    <string name="doze_deep">Deep Doze</string>
+    <string name="doze_light">Light Doze</string>
+    <string name="doze">Force Doze Mode</string>
+    <string name="doze_summary">Enable doze mode to prevents certain tasks from running if your device is in idle state.</string>
 
     <!-- Data Sharing -->
     <string name="data_sharing_summary_notification">Data sharing is active! Click to learn more about this feature.</string>
@@ -1230,6 +1342,10 @@
     <string name="disable_question">Disable %s?</string>
 
     <!-- Settings -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="not_supported">Not supported</string>
+    <string name="not_available">Not available</string>
     <string name="open_settings">Open Settings</string>
     <string name="general">General</string>
     <string name="reset_data_title">Restore application</string>
@@ -1237,7 +1353,7 @@
     <string name="app_update_notif_title">Update Notification</string>
     <string name="app_update_notif_summary">Show update notifications when new version ia available</string>
     <string name="check_update_title">Check update</string>
-    <string name="check_update_summary">Check if there is a new update of hKtweaks</string>
+    <string name="check_update_summary">Check if there is a new update of ThunderTweaks</string>
     <string name="reset_data_summary">Clear data and restore the application settings</string>
     <string name="reset_data_dialog1">The data and the configuration of the entire application will be erased.\n\nAre you sure?\n</string>
     <string name="reset_data_dialog2_title">Reboot</string>
@@ -1261,6 +1377,10 @@
     <string name="ten_sec">10 seconds</string>
     <string name="twenty_sec">20 seconds</string>
     <string name="fifty_sec">50 seconds</string>
+    <string name="sixty_sec">60 seconds</string>
+    <string name="ninty_sec">90 seconds</string>
+	<string name="onetwenty_sec">120 seconds</string>
+	<string name="onefifty_sec">150 seconds</string>
     <string name="apply_on_boot_test_summary">Test apply on boot. This includes all kind of things which are getting applied during booting, such as custom controls, profiles, init.d, etc.</string>
     <string name="apply_on_boot_running">Apply on boot service is already running. Please wait until it finishes.</string>
     <string name="nothing_apply">Nothing found to apply!</string>
@@ -1271,7 +1391,7 @@
     <string name="confirmation_notification">Confirmation Notification</string>
     <string name="apply_on_boot_confirmation_notification_summary">After apply on boot with visible notification, show a notification afterwards with the confirmation that apply on boot was successful.</string>
     <string name="script">Script</string>
-    <string name="apply_on_boot_script_summary">Use a shell script to apply settings. Please only enable this if you have troubles with apply on boot. If the problem still persists after enabling this option, please make sure no other app is conflicting with hKtweaks.</string>
+    <string name="apply_on_boot_script_summary">Use a shell script to apply settings. Please only enable this if you have troubles with apply on boot. If the problem still persists after enabling this option, please make sure no other app is conflicting with ThunderTweaks.</string>
     <string name="debugging">Debugging</string>
     <string name="logcat">Logcat</string>
     <string name="logcat_summary">Copy logcat to /sdcard/logcat.txt</string>
@@ -1281,7 +1401,7 @@
     <string name="driver_message_summary">Copy driver message (dmesg) to /sdcard/dmesg.txt</string>
     <string name="security">Security</string>
     <string name="set_password">Set Password</string>
-    <string name="set_password_summary">You can protect hKtweaks by setting up a password. Every time you open this application, you have to enter it. If you forget it, simply wipe the data of this application in settings of your device. Don\'t worry I won\'t share your password.</string>
+    <string name="set_password_summary">You can protect ThunderTweaks by setting up a password. Every time you open this application, you have to enter it. If you forget it, simply wipe the data of this application in settings of your device. Don\'t worry I won\'t share your password.</string>
     <string name="delete_password">Delete Password</string>
     <string name="old_password">Old password</string>
     <string name="new_password">New password</string>
@@ -1295,15 +1415,16 @@
     <string name="sections">Sections</string>
 
     <!-- About -->
-    <!--<string name="about_me">Hi, I\'m Willi Ye aka Grarak, a 19 year old student living in Vienna. I\'ve been developing on Android for quite a long time. Beside hKtweaks I\'m also maintaining LineageOS for few devices and working on ParanoidAndroid. So please understand if I don\'t find the time to update this application.</string>-->
-    <!--<string name="about_me">Hi, I\'m MoroGoku, developer of MoRoKernel of Samsung S7. This app is a mod of \"hKtweaks\" of Willi Ye, aka Grarak. I make this mod for compatibilize hKtweaks with Galaxy S7 smartphone, and add some new options. Thanks Willi for this great app.</string>-->
-    <string name="about_me">Hi, I\'m corsicanu, developer of many things, including and not limited to this mod of \"MTweaks\" by MoroGoku, properly adapted to be used on many Samsung Exynos soc based devices.\n\nThanks Willi for his great app, special thanks to MoroGoku for his awesome MTweaks app.</string>
+    <!--<string name="about_me">Hi, I\'m Willi Ye aka Grarak, a 19 year old student living in Vienna. I\'ve been developing on Android for quite a long time. Beside thunderstorm.ThunderTweaks I\'m also maintaining LineageOS for few devices and working on ParanoidAndroid. So please understand if I don\'t find the time to update this application.</string>-->
+    <!--<string name="about_me">Hi, I\'m MoroGoku, developer of MoRoKernel of Samsung S7. This app is a mod of \"thunderstorm.ThunderTweaks\" of Willi Ye, aka Grarak. I make this mod for compatibilize thunderstorm.ThunderTweaks with Galaxy S7 smartphone, and add some new options. Thanks Willi for this great app.</string>-->
+    <!--<string name="about_me">Hi, I\'m Corsicanu, developer of hadesKernel.\nThis app is a mod of \"MTweaks\" by MoroGoku, properly adaptated to exynos7870/7880/7884/7885/7904 devices (maybe even more).\n\nThanks Willi for this great app, special thanks to MoroGoku for his awesome MTweaks app.</string>-->
+    <string name="about_me">Hi, I\'m @nalas XDA, developer of ThundeRStormS Kernel.\nThis app is a mod of \"hKtweaks"\ by corsicanu and \"MTweaks\" by MoroGoku, properly adaptated to exynos7870/7880/7884/7885/7904/8890/8895/9810/9820/9830/2100 devices (maybe even more).\n\nThanks Willi for this great app, special thanks to MoroGoku and corsicanu for their awesome hkTweaks and MTweaks apps. Thanks for Rohan D. and graphics projects for XDA@Franz S. and XDA@phghost, @nckmml, XDA@VHFG22, @Game Over, XDA@matt_988 and XDA@Kyo-Ito</string>
     <string name="libraries_used">Libraries used</string>
 
     <!-- Donation -->
     <string name="donation_title">Donation</string>
-    <string name="donation_summary_mg">Hi, MTweaks v2 is an application based on \"Kernel Adiutor\" by Willi Ye, aka Grarak.\n\nIt has several new modifications and adjustments, especially for the latest Samsung Galaxy.\n\nI do this because I have fun and I like to share my work, that\'s why it\'s free and does not carry advertising.\n\nAlthough if you liked the work I have done and you want to donate something and invite me to a beer, as they say, you can do it in the following Paypal link.</string>
-    <string name="donation_summary">hKtweaks is an app based on \"MTweaks\" by MoroGoku, properly adapted to be used on many Samsung Exynos soc based devices.\nIf you appreciate my work and you want to donate to support my work and provide me more coffee, you can do it on the following Paypal link.</string>
+    <string name="donation_summary_mg">Hi, ThunderTweaks is an application based on \"Kernel Adiutor\" by Willi Ye, aka Grarak.\n\nIt has several new modifications and adjustments, especially for the latest Samsung Galaxy S7-S21 and N7-N21.\n\nI do this because I have fun and I like to share my work, that\'s why it\'s free and does not carry advertising.\n\nAlthough if you liked the work I have done and you want to donate something and invite me to a beer, as they say, you can do it in the following Paypal link.</string>
+    <string name="donation_summary">ThunderTweaks is an app based on \"hKtweaks"\ by corsicanu and \"MTweaks\" by MoroGoku, properly adaptated to exynos7870/7880/7884/7885/7904/8890/8895/9810/9820 devices (maybe even more).\nIf you appreciate my work and you want to donate to support my work and provide me more coffee, you can do it on the following Paypal link.</string>
 
     <!-- Contributors -->
     <string name="commits">%d commits</string>
@@ -1338,10 +1459,62 @@
     <string name="appupdater_btn_dismiss">Dismiss</string>
     <string name="appupdater_download_filed">Download FAILED!</string>
     <string name="appupdater_downloading_file">Downloading</string>
-    <string name="appupdater_json">https://raw.githubusercontent.com/corsicanu/hKtweaks/master/app/src/main/assets/update.json</string>
-    <string name="not_supported">Not supported…</string>
-    <string name="battery_health">Battery Health</string>
-    <string name="swInfo">Software Info</string>
-    <string name="hwInfo">Hardware Info</string>
-    <string name="cpu_features">CPU Features/Extensions</string>
+    <string name="appupdater_json">https://raw.githubusercontent.com/corsicanu/thunderTweaks/master/app/update.json</string>
+	<string name="battery_health">Battery Health</string>
+    <string name="mdnie">Force screen to use all colors at max</string>
+    <string name="mif">MIF</string>
+    <string name="busInt">INT</string>
+    <string name="busDisp">DISPLAY</string>
+    <string name="busCam">CAMERA</string>
+    <string name="busIntCam">INT CAMERA</string>
+    <string name="busAud">AUDIO</string>
+    <string name="busIva">IVA</string>
+    <string name="busScore">SCORE</string>
+    <string name="busFsys0">FSYS</string>
+    <string name="busMfc">MFC</string>
+    <string name="busNpu">NPU</string>
+    <string name="marginVoltage">Voltage Margin</string>
+    <string name="marginVoltage_BIG_percent">Big Voltage Margin Percent</string>
+    <string name="marginVoltage_MID_percent">Middle Voltage Margin Percent</string>
+    <string name="marginVoltage_LIT_percent">Little Voltage Margin Percent</string>
+    <string name="marginVoltage_G3D_percent">Gpu Voltage Margin Percent</string>
+    <string name="marginVoltage_MIF_percent">Mif Voltage Margin Percent</string>
+    <string name="marginVoltage_MFC_percent">Mfc Voltage Margin Percent</string>
+    <string name="marginVoltage_NPU_percent">Npu Voltage Margin Percent</string>
+    <string name="marginVoltage_AUD_percent">Audio Voltage Margin Percent</string>
+    <string name="marginVoltage_CAM_percent">Camera Voltage Margin Percent</string>
+    <string name="marginVoltage_CP_percent">Cp Voltage Margin Percent</string>
+    <string name="marginVoltage_DISP_percent">Display Voltage Margin Percent</string>
+    <string name="marginVoltage_FSYS0_percent">Fsys Voltage Margin Percent</string>
+    <string name="marginVoltage_INT_percent">Int Voltage Margin Percent</string>
+    <string name="marginVoltage_INTCAM_percent">Int Camera Voltage Margin Percent</string>
+    <string name="marginVoltage_IVA_percent">Iva Voltage Margin Percent</string>
+    <string name="marginVoltage_SCORE_percent">Score Voltage Margin Percent</string>
+    <string name="power_nav">Power</string>
+    <string name="marginVoltage_Summary">Change Voltage with Percent of Stock Voltage</string>
+	
+    <!-- GAME -->
+    <string name="gmcControl">Game Control</string>
+    <string name="gmcControl_Summary">Change freqs while playing selected games</string>
+    <string name="gmc_nav">Game</string>
+    <string name="gmcControl_is_game">Game Misc Control mode ON</string>
+    <string name="gmcControl_is_game_desc">Game Misc Control mode on/off. Turn on/off game mode.</string>
+    <string name="gmcControl_run">Always ON</string>
+    <string name="gmcControl_run_desc">Game Control will be enabled all the time</string>
+    <string name="gmcControl_bindcpu">Bind CPU ON/OFF</string>
+    <string name="gmcControl_bindcpu_desc">Game Control will be enabled to bind CPUs with Game Misc Control</string>
+    <string name="gmcControl_MIF_min">Minimum MIF freq while playing game</string>
+    <string name="gmcControl_MIF_max">Maximum MIF freq while playing game</string>
+    <string name="gmcControl_BIG_max">Maximum BIG Cpu freq while playing game</string>
+    <string name="gmcControl_BIG_min">Minimum BIG Cpu freq while playing game</string>
+    <string name="gmcControl_MIDDLE_max">Maximum MIDDLE Cpu freq while playing game</string>
+    <string name="gmcControl_MIDDLE_min">Minimum MIDDLE Cpu freq while playing game</string>
+    <string name="gmcControl_MIDDLE_sse">SSE MIDDLE Cpu freq while playing game</string>
+    <string name="gmcControl_LITTLE_max">Maximum LITTLE Cpu freq while playing game</string>
+    <string name="gmcControl_LITTLE_min">Minimum LITTLE Cpu freq while playing game</string>
+    <string name="gmcControl_GPU_max">Maximum GPU freq while playing game</string>
+    <string name="gmcControl_GPU_lite">Lite GPU freq while playing game</string>
+    <string name="gmcControl_GPU_min">Minimum GPU freq while playing game</string>
+    <string name="gmcControl_maxlock_delay">Minimim time for lock freqs for CPUs, GPU and MIF</string>
+    <string name="gmcControl_maxlock_delay_summary">Minimim time for lock freqs while playing game in sec</string>
 </resources>
