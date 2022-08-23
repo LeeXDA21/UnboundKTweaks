@@ -30,6 +30,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Messenger;
+
+import androidx.biometric.BiometricPrompt;
 import androidx.fragment.app.Fragment;
 import androidx.core.content.ContextCompat;
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
@@ -59,7 +61,6 @@ import com.thunder.thundertweaks.activities.NavigationActivity;
 import com.thunder.thundertweaks.services.boot.ApplyOnBootService;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Themes;
-import com.thunder.thundertweaks.utils.AppUpdaterTask;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.ViewUtils;
 import com.thunder.thundertweaks.utils.root.RootUtils;
@@ -68,6 +69,7 @@ import com.thunder.thundertweaks.views.dialog.Dialog;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by willi on 13.08.16.
@@ -114,9 +116,11 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        rootView.setPadding(rootView.getPaddingLeft(),
-                Math.round(ViewUtils.getActionBarSize(getActivity())),
-                rootView.getPaddingRight(), rootView.getPaddingBottom());
+        if (rootView != null) {
+            Objects.requireNonNull(rootView).setPadding(rootView.getPaddingLeft(),
+                    Math.round(ViewUtils.getActionBarSize(Objects.requireNonNull(requireActivity()))),
+                    rootView.getPaddingRight(), rootView.getPaddingBottom());
+        }
         return rootView;
     }
 
@@ -172,8 +176,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
         findPreference(KEY_SET_PASSWORD).setOnPreferenceClickListener(this);
         findPreference(KEY_DELETE_PASSWORD).setOnPreferenceClickListener(this);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M
-                || !FingerprintManagerCompat.from(getActivity()).isHardwareDetected()) {
+        if (!FingerprintManagerCompat.from(Objects.requireNonNull(requireActivity())).isHardwareDetected()) {
             ((PreferenceCategory) findPreference(KEY_SECURITY_CATEGORY)).removePreference(
                     findPreference(KEY_FINGERPRINT));
         } else {
@@ -183,7 +186,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
 
         NavigationActivity activity = (NavigationActivity) getActivity();
         PreferenceCategory sectionsCategory = (PreferenceCategory) findPreference(KEY_SECTIONS);
-        for (NavigationActivity.NavigationFragment navigationFragment : activity.getFragments()) {
+        for (NavigationActivity.NavigationFragment navigationFragment : Objects.requireNonNull(activity).getFragments()) {
             Class<? extends Fragment> fragmentClass = navigationFragment.mFragmentClass;
             int id = navigationFragment.mId;
 
@@ -210,7 +213,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
                 //return true;
             case KEY_FORCE_ENGLISH:
             case KEY_DARK_THEME:
-                getActivity().finish();
+                Objects.requireNonNull(requireActivity()).finish();
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra(NavigationActivity.INTENT_SECTION,
@@ -225,11 +228,11 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
             case KEY_HIDE_BANNER:
                 return true;
             case KEY_SECTIONS_ICON:
-                ((NavigationActivity) getActivity()).appendFragments();
+                ((NavigationActivity) Objects.requireNonNull(requireActivity())).appendFragments();
                 return true;
             default:
                 if (key.endsWith("_enabled")) {
-                    ((NavigationActivity) getActivity()).appendFragments();
+                    ((NavigationActivity) Objects.requireNonNull(requireActivity())).appendFragments();
                     return true;
                 }
                 break;
@@ -276,12 +279,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
                 colorDialog(false);
                 return true;
             case KEY_APPLY_ON_BOOT_TEST:
-                if (Utils.isServiceRunning(ApplyOnBootService.class, getActivity())) {
+                if (Utils.isServiceRunning(ApplyOnBootService.class, Objects.requireNonNull(requireActivity()))) {
                     Utils.toast(R.string.apply_on_boot_running, getActivity());
                 } else {
                     Intent intent2 = new Intent(getActivity(), ApplyOnBootService.class);
                     intent2.putExtra("messenger", new Messenger(new MessengerHandler(getActivity())));
-                    Utils.startService(getActivity(), intent2);
+                    Utils.startService(Objects.requireNonNull(requireActivity()), intent2);
                 }
                 return true;
             case KEY_LOGCAT:
@@ -308,7 +311,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
     }
 
     private static class Execute extends AsyncTask<String, Void, Void> {
-        private ProgressDialog mProgressDialog;
+        private final ProgressDialog mProgressDialog;
 
         private Execute(Context context) {
             mProgressDialog = new ProgressDialog(context);
@@ -336,14 +339,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
     }
 
     private void resetDataDialog(){
-        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder alert = new AlertDialog.Builder(Objects.requireNonNull(requireActivity()));
         alert.setTitle(getString(R.string.reset_data_title));
         alert.setMessage(getString(R.string.reset_data_dialog1));
         alert.setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
         });
         alert.setPositiveButton(getString(R.string.ok), (dialog, id) -> {
 
-            AlertDialog.Builder alert2 = new AlertDialog.Builder(getActivity());
+            AlertDialog.Builder alert2 = new AlertDialog.Builder(Objects.requireNonNull(requireActivity()));
             alert2.setTitle(getString(R.string.reset_data_dialog2_title));
             alert2.setMessage(getString(R.string.reset_data_dialog2_message));
             alert2.setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
@@ -368,7 +371,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
         int padding = Math.round(getResources().getDimension(R.dimen.dialog_padding));
         linearLayout.setPadding(padding, padding, padding, padding);
 
-        final AppCompatEditText oldPassword = new AppCompatEditText(getActivity());
+        final AppCompatEditText oldPassword = new AppCompatEditText(Objects.requireNonNull(requireActivity()));
         if (!oldPass.isEmpty()) {
             oldPassword.setInputType(InputType.TYPE_CLASS_TEXT
                     | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -376,12 +379,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
             linearLayout.addView(oldPassword);
         }
 
-        final AppCompatEditText newPassword = new AppCompatEditText(getActivity());
+        final AppCompatEditText newPassword = new AppCompatEditText(Objects.requireNonNull(requireActivity()));
         newPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         newPassword.setHint(getString(R.string.new_password));
         linearLayout.addView(newPassword);
 
-        final AppCompatEditText confirmNewPassword = new AppCompatEditText(getActivity());
+        final AppCompatEditText confirmNewPassword = new AppCompatEditText(Objects.requireNonNull(requireActivity()));
         confirmNewPassword.setInputType(InputType.TYPE_CLASS_TEXT
                 | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         confirmNewPassword.setHint(getString(R.string.confirm_new_password));
@@ -391,18 +394,18 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
                 .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                 })
                 .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> {
-                    if (!oldPass.isEmpty() && !oldPassword.getText().toString().equals(Utils
+                    if (!oldPass.isEmpty() && !Objects.requireNonNull(oldPassword.getText()).toString().equals(Utils
                             .decodeString(oldPass))) {
                         Utils.toast(getString(R.string.old_password_wrong), getActivity());
                         return;
                     }
 
-                    if (newPassword.getText().toString().isEmpty()) {
+                    if (Objects.requireNonNull(newPassword.getText()).toString().isEmpty()) {
                         Utils.toast(getString(R.string.password_empty), getActivity());
                         return;
                     }
 
-                    if (!newPassword.getText().toString().equals(confirmNewPassword.getText()
+                    if (!newPassword.getText().toString().equals(Objects.requireNonNull(confirmNewPassword.getText())
                             .toString())) {
                         Utils.toast(getString(R.string.password_not_match), getActivity());
                         return;
@@ -436,14 +439,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
         int padding = Math.round(getResources().getDimension(R.dimen.dialog_padding));
         linearLayout.setPadding(padding, padding, padding, padding);
 
-        final AppCompatEditText mPassword = new AppCompatEditText(getActivity());
+        final AppCompatEditText mPassword = new AppCompatEditText(Objects.requireNonNull(requireActivity()));
         mPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         mPassword.setHint(getString(R.string.password));
         linearLayout.addView(mPassword);
 
         new Dialog(getActivity()).setView(linearLayout)
                 .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> {
-                    if (!mPassword.getText().toString().equals(Utils.decodeString(password))) {
+                    if (!Objects.requireNonNull(mPassword.getText()).toString().equals(Utils.decodeString(password))) {
                         Utils.toast(getString(R.string.password_wrong), getActivity());
                         return;
                     }
@@ -492,10 +495,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
 
             BorderCircleView circle = new BorderCircleView(getActivity());
             circle.setChecked(i == selection);
-            circle.setCircleColor(ContextCompat.getColor(getActivity(),
-                    Themes.getColor(colors.get(i), getActivity())));
-            circle.setBorderColor(ContextCompat.getColor(getActivity(),
-                    Themes.getColor(counterPartColor, getActivity())));
+            circle.setCircleColor(ContextCompat.getColor(Objects.requireNonNull(requireActivity()),
+                    Themes.getColor(colors.get(i), Objects.requireNonNull(requireActivity()))));
+            circle.setBorderColor(ContextCompat.getColor(Objects.requireNonNull(requireActivity()),
+                    Themes.getColor(counterPartColor, Objects.requireNonNull(requireActivity()))));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
             int margin = (int) getResources().getDimension(R.dimen.color_dialog_margin);
@@ -527,7 +530,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
                             Themes.saveAccentColor(colors.get(mColorSelection), getActivity());
                         }
                     }
-                    getActivity().finish();
+                    Objects.requireNonNull(requireActivity()).finish();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra(NavigationActivity.INTENT_SECTION,
@@ -563,11 +566,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
         int childCount = viewGroup.getChildCount();
         for (int i = 0; i < childCount; i++) {
             setZeroPaddingToLayoutChildren(viewGroup.getChildAt(i));
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
-                viewGroup.setPaddingRelative(0, viewGroup.getPaddingTop(), viewGroup.getPaddingEnd(), viewGroup.getPaddingBottom());
-            else
-                viewGroup.setPadding(0, viewGroup.getPaddingTop(), viewGroup.getPaddingRight(), viewGroup.getPaddingBottom());
+            viewGroup.setPaddingRelative(0, viewGroup.getPaddingTop(), viewGroup.getPaddingEnd(), viewGroup.getPaddingBottom());
         }
     }
-
 }

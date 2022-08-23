@@ -24,13 +24,15 @@ import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.core.content.ContextCompat;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import androidx.fragment.app.Fragment;
+
 
 /**
  * Created by willi on 28.12.15.
@@ -64,7 +66,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public boolean onBackPressed() {
-        return false;
+        return true;
     }
 
     @Override
@@ -79,18 +81,16 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void requestPermission(int request, String... permissions) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            List<String> needrequest = new ArrayList<>();
-            for (String permission : permissions) {
-                if (ContextCompat.checkSelfPermission(getActivity(), permission)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    needrequest.add(permission);
-                }
+        List<String> needrequest = new ArrayList<>();
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(Objects.requireNonNull(requireActivity()), permission)
+                    != PackageManager.PERMISSION_GRANTED) {
+                needrequest.add(permission);
             }
-            if (needrequest.size() > 0) {
-                requestPermissions(needrequest.toArray(new String[needrequest.size()]), request);
-                return;
-            }
+        }
+        if (needrequest.size() > 0) {
+            requestPermissions(needrequest.toArray(new String[0]), request);
+            return;
         }
         onPermissionGranted(request);
     }

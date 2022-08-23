@@ -33,6 +33,8 @@ import android.content.ComponentName;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+
+import com.google.android.material.color.DynamicColors;
 import com.thunder.thundertweaks.utils.Log;
 import com.thunder.thundertweaks.database.tools.profiles.Profiles;
 
@@ -92,6 +94,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        DynamicColors.applyToActivityIfAvailable(this);
 
         View splashBackground = findViewById(R.id.splash_background);
         mRootAccess = findViewById(R.id.root_access_text);
@@ -151,7 +154,7 @@ public class MainActivity extends BaseActivity {
 
     private static class CheckingTask extends AsyncTask<Void, Integer, Void> {
 
-        private WeakReference<MainActivity> mRefActivity;
+        private final WeakReference<MainActivity> mRefActivity;
 
         private boolean mHasRoot;
         private boolean mHasBusybox;

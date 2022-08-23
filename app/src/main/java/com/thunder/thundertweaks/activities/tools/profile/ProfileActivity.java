@@ -207,7 +207,7 @@ public class ProfileActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         BaseFragment fragment = (BaseFragment) mItems.values().toArray(new Fragment[mItems.size()])[mCurPosition];
-        if (!fragment.onBackPressed()) {
+        if (fragment.onBackPressed()) {
             super.onBackPressed();
         }
     }

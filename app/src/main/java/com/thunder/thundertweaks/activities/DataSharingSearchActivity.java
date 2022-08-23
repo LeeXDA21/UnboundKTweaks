@@ -35,6 +35,7 @@ import com.thunder.thundertweaks.views.recyclerview.datasharing.DataSharingDevic
 import com.thunder.thundertweaks.views.recyclerview.datasharing.DataSharingPageView;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by willi on 16.09.17.
@@ -77,7 +78,7 @@ public class DataSharingSearchActivity extends BaseActivity {
         protected void postInit() {
             super.postInit();
 
-            ((BaseActivity) getActivity()).getSupportActionBar()
+            Objects.requireNonNull(((BaseActivity) requireActivity()).getSupportActionBar())
                     .setTitle(mSelection == null ? getString(R.string.show_all) : mSelection);
             if (mServerSearchDevice == null) {
                 showProgress();
@@ -97,10 +98,10 @@ public class DataSharingSearchActivity extends BaseActivity {
                 if (mBoards != null) {
                     new Dialog(getActivity())
                             .setTitle(getString(R.string.board))
-                            .setItems(mBoards.toArray(new String[mBoards.size()]),
+                            .setItems(mBoards.toArray(new String[0]),
                                     (dialogInterface, i) -> {
                                         loadDevices(1, i == 0 ? null : mBoards.get(i));
-                                        ((BaseActivity) getActivity()).getSupportActionBar()
+                                        Objects.requireNonNull(((BaseActivity) requireActivity()).getSupportActionBar())
                                                 .setTitle(mSelection = mBoards.get(i));
                                     }).show();
                 }

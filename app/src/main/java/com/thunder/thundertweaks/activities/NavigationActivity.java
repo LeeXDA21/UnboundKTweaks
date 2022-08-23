@@ -25,7 +25,6 @@ import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -463,7 +462,7 @@ public class NavigationActivity extends BaseActivity
         } else {
             Fragment currentFragment = getFragment(mSelection);
             if (!(currentFragment instanceof BaseFragment)
-                    || !((BaseFragment) currentFragment).onBackPressed()) {
+                    || ((BaseFragment) currentFragment).onBackPressed()) {
                 long currentTime = SystemClock.elapsedRealtime();
                 if (currentTime - mLastTimeBackbuttonPressed > 2000) {
                     mLastTimeBackbuttonPressed = currentTime;

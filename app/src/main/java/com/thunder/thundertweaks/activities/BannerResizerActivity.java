@@ -36,6 +36,8 @@ import com.thunder.thundertweaks.utils.ViewUtils;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
+import java.util.Objects;
+
 /**
  * Created by willi on 09.08.16.
  */
@@ -50,7 +52,7 @@ public class BannerResizerActivity extends BaseActivity {
 
         initToolBar();
 
-        getSupportActionBar().setTitle(getString(R.string.banner_resizer));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.banner_resizer));
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, getFragment(),
                 BannerResizerFragment.class.getSimpleName()).commit();
         findViewById(R.id.content_frame).setPadding(0,
@@ -79,7 +81,7 @@ public class BannerResizerActivity extends BaseActivity {
             int maxHeight = Math.round(getResources().getDimension(R.dimen.banner_max_height));
 
             final View banner = rootView.findViewById(R.id.banner_view);
-            final int px = AppSettings.getBannerSize(getActivity());
+            final int px = AppSettings.getBannerSize(Objects.requireNonNull(getActivity()));
             setHeight(banner, px);
 
             final TextView text = rootView.findViewById(R.id.seekbar_text);

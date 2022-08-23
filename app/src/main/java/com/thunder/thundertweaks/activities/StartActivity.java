@@ -22,6 +22,8 @@ package com.thunder.thundertweaks.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.material.color.DynamicColors;
+
 /**
  * Created by willi on 02.08.16.
  */
@@ -40,6 +42,7 @@ public class StartActivity extends BaseActivity {
         if (getIntent().getExtras() != null) {
             intent.putExtras(getIntent().getExtras());
         }
+        DynamicColors.applyToActivityIfAvailable(this);
         startActivity(intent);
         finish();
     }

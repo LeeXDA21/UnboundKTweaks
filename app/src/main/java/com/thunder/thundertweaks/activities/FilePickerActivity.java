@@ -39,6 +39,7 @@ import com.thunder.thundertweaks.views.recyclerview.RecyclerViewItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by willi on 04.07.16.
@@ -122,28 +123,28 @@ public class FilePickerActivity extends BaseActivity {
         protected void init() {
             super.init();
             if (mPath == null) {
-                mPath = getArguments().getString(PATH_INTENT);
+                mPath = requireArguments().getString(PATH_INTENT);
             }
             if (mExtension == null) {
-                mExtension = getArguments().getString(EXTENSION_INTENT);
+                mExtension = requireArguments().getString(EXTENSION_INTENT);
             }
-            int accentColor = ViewUtils.getThemeAccentColor(getContext());
+            int accentColor = ViewUtils.getThemeAccentColor(requireContext());
             if (mDirImage == null) {
                 mDirImage = DrawableCompat.wrap(
-                        ContextCompat.getDrawable(getActivity(), R.drawable.ic_dir));
+                        Objects.requireNonNull(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_dir)));
                 DrawableCompat.setTint(mDirImage, accentColor);
             }
             if (mFileImage == null) {
                 mFileImage = DrawableCompat.wrap(
-                        ContextCompat.getDrawable(getActivity(), R.drawable.ic_file));
-                DrawableCompat.setTint(mFileImage, ViewUtils.getTextSecondaryColor(getContext()));
+                        Objects.requireNonNull(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_file)));
+                DrawableCompat.setTint(mFileImage, ViewUtils.getTextSecondaryColor(requireContext()));
             }
             if (mPickDialog != null) {
                 mPickDialog.show();
             }
 
             ActionBar actionBar;
-            if ((actionBar = ((FilePickerActivity) getActivity()).getSupportActionBar()) != null) {
+            if ((actionBar = ((FilePickerActivity) Objects.requireNonNull(requireActivity())).getSupportActionBar()) != null) {
                 actionBar.setTitle(mPath);
             }
         }
@@ -157,7 +158,7 @@ public class FilePickerActivity extends BaseActivity {
         protected void postInit() {
             super.postInit();
             ActionBar actionBar;
-            if ((actionBar = ((BaseActivity) getActivity()).getSupportActionBar()) != null) {
+            if ((actionBar = ((BaseActivity) Objects.requireNonNull(requireActivity())).getSupportActionBar()) != null) {
                 actionBar.setTitle(mPath);
             }
         }
@@ -245,8 +246,8 @@ public class FilePickerActivity extends BaseActivity {
                                         (dialog, which) -> {
                                             Intent intent = new Intent();
                                             intent.putExtra(RESULT_INTENT, file.toString());
-                                            getActivity().setResult(0, intent);
-                                            getActivity().finish();
+                                            Objects.requireNonNull(requireActivity()).setResult(0, intent);
+                                            Objects.requireNonNull(requireActivity()).finish();
                                         },
                                         dialog -> mPickDialog = null, getActivity());
                         mPickDialog.show();

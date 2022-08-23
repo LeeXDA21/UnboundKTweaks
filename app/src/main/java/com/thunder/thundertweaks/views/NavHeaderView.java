@@ -33,6 +33,8 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.android.material.color.DynamicColors;
+import com.thunder.thundertweaks.activities.BaseActivity;
 import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Utils;
@@ -125,12 +127,7 @@ public class NavHeaderView extends LinearLayout {
             super.onCreate(savedInstanceState);
 
             Intent intent;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-            } else {
-                intent = new Intent();
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-            }
+            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
             intent.setType("image/*");
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), 0);

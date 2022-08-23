@@ -19,11 +19,8 @@
  */
 package com.thunder.thundertweaks.fragments.kernel;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Vibrator;
-import android.text.InputType;
-
 import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
@@ -43,7 +40,6 @@ import com.thunder.thundertweaks.views.recyclerview.SeekBarView;
 import com.thunder.thundertweaks.views.recyclerview.SelectView;
 import com.thunder.thundertweaks.views.recyclerview.SwitchView;
 import com.thunder.thundertweaks.views.recyclerview.TitleView;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -191,7 +187,7 @@ public class MiscFragment extends RecyclerViewFragment {
     }
 
     private void vibrationInit(List<RecyclerViewItem> items) {
-        final Vibrator vibrator = (Vibrator) Objects.requireNonNull(getActivity())
+        final Vibrator vibrator = (Vibrator) Objects.requireNonNull(requireActivity())
                 .getSystemService(Context.VIBRATOR_SERVICE);
 
         final int min = mVibration.getMin();
@@ -307,7 +303,7 @@ public class MiscFragment extends RecyclerViewFragment {
         CardView doze = new CardView(getActivity());
         doze.setTitle(getString(R.string.doze));
 		
-		if (mMisc.hasDoze()) {
+		if (Misc.hasDoze()) {
 				SelectView dozes = new SelectView();
 				dozes.setTitle(getString(R.string.doze));
 				dozes.setSummary(getString(R.string.doze_summary));

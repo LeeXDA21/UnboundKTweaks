@@ -23,7 +23,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.LocaleList;
 import androidx.annotation.Nullable;
@@ -34,6 +33,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.android.material.color.DynamicColors;
 import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Themes;
@@ -41,6 +41,7 @@ import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.ViewUtils;
 
 import java.util.Locale;
+import java.util.Objects;
 
 /**
  * Created by willi on 14.04.16.
@@ -49,8 +50,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        DynamicColors.applyToActivityIfAvailable(this);
         Utils.DARK_THEME = Themes.isDarkTheme(this);
         Themes.Theme theme = Themes.getTheme(this, Utils.DARK_THEME);
         if (Utils.DARK_THEME) {
@@ -61,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setTheme(theme.getStyle());
         super.onCreate(savedInstanceState);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && setStatusBarColor()) {
+        if (setStatusBarColor()) {
             Window window = getWindow();
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -72,7 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         if (AppSettings.isForceEnglish(newBase)) {
-            super.attachBaseContext(wrap(newBase, new Locale("en_US")));
+            super.attachBaseContext(wrap(newBase, new Locale("en_GB")));
         } else {
             super.attachBaseContext(newBase);
         }
@@ -83,22 +84,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         Resources res = context.getResources();
         Configuration configuration = res.getConfiguration();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            configuration.setLocale(newLocale);
+        configuration.setLocale(newLocale);
 
-            LocaleList localeList = new LocaleList(newLocale);
-            LocaleList.setDefault(localeList);
-            configuration.setLocales(localeList);
+        LocaleList localeList = new LocaleList(newLocale);
+        LocaleList.setDefault(localeList);
+        configuration.setLocales(localeList);
 
-            context = context.createConfigurationContext(configuration);
-
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(newLocale);
-            context = context.createConfigurationContext(configuration);
-        } else {
-            configuration.locale = newLocale;
-            res.updateConfiguration(configuration, res.getDisplayMetrics());
-        }
+        context = context.createConfigurationContext(configuration);
 
         return new ContextWrapper(context);
     }
@@ -116,7 +108,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             toolbar.setNavigationOnClickListener(v -> finish());
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         }
     }
 

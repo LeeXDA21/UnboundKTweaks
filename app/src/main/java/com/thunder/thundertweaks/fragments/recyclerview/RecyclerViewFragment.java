@@ -33,6 +33,7 @@ import android.os.Handler;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -886,12 +887,12 @@ public abstract class RecyclerViewFragment extends BaseFragment {
         if (mForegroundParent != null
                 && mForegroundParent.getVisibility() == View.VISIBLE) {
             dismissForeground();
-            return true;
+            return false;
         } else if (mDialogParent != null
                 && mDialogParent.getVisibility() == View.VISIBLE) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     @Override
