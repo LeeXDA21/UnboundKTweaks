@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.views.recyclerview;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.ViewUtils;
 import com.thunder.thundertweaks.utils.other.Contributors;

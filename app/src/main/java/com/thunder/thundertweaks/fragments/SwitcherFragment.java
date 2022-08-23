@@ -29,7 +29,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by willi on 17.09.17.

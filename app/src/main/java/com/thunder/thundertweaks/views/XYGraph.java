@@ -30,7 +30,7 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.ViewUtils;
 

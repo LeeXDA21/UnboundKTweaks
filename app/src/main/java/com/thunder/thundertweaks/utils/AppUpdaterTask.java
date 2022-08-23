@@ -5,7 +5,7 @@ import android.content.Context;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.github.javiersantos.appupdater.enums.Display;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by Morogoku on 12/01/2018.

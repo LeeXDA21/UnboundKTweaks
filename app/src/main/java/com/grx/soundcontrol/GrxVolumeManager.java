@@ -17,7 +17,7 @@ import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.kernel.sound.MoroSound;
 import com.thunder.thundertweaks.views.recyclerview.RecyclerViewItem;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 import java.util.HashMap;
 

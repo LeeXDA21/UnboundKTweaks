@@ -27,7 +27,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.BaseActivity;
 import com.thunder.thundertweaks.fragments.tools.downloads.AboutFragment;
 import com.thunder.thundertweaks.fragments.tools.downloads.DownloadKernelFragment;

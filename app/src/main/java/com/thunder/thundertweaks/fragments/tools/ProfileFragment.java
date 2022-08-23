@@ -41,7 +41,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.FilePickerActivity;
 import com.thunder.thundertweaks.activities.NavigationActivity;
 import com.thunder.thundertweaks.activities.tools.profile.ProfileActivity;

@@ -29,7 +29,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.EditorActivity;
 import com.thunder.thundertweaks.activities.tools.CustomControlsActivity;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;

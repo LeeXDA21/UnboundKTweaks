@@ -23,7 +23,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.SwitchCompat;
 import android.view.View;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -25,7 +25,7 @@ import android.widget.CheckBox;
 import androidx.appcompat.app.AlertDialog;
 
 import com.grx.soundcontrol.GrxMicVolumeManager;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.AppSettings;

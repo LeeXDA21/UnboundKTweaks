@@ -4,7 +4,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import android.view.View;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by MoroGoku on 27/09/2017.

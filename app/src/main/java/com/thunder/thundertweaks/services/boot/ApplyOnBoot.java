@@ -28,7 +28,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import androidx.core.app.NotificationCompat;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.MainActivity;
 import com.thunder.thundertweaks.database.Settings;
 import com.thunder.thundertweaks.database.tools.customcontrols.Controls;

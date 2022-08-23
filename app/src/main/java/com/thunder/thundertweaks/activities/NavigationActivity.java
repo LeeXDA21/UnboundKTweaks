@@ -44,7 +44,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.BaseFragment;
 import com.thunder.thundertweaks.fragments.kernel.BatteryFragment;
 import com.thunder.thundertweaks.fragments.kernel.BoefflaWakelockFragment;

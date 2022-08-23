@@ -106,6 +106,7 @@ public class AppUpdaterUtils {
      * @see com.github.javiersantos.appupdater.AppUpdaterUtils.AppUpdaterListener
      * @deprecated
      */
+    @Deprecated
     public AppUpdaterUtils withListener(AppUpdaterListener appUpdaterListener) {
         this.appUpdaterListener = appUpdaterListener;
         return this;

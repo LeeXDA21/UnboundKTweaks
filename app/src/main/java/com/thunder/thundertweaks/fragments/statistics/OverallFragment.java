@@ -39,7 +39,7 @@ import android.widget.TextView;
 
 import com.bvalosek.cpuspy.CpuSpyApp;
 import com.bvalosek.cpuspy.CpuStateMonitor;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.BaseFragment;
 
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;

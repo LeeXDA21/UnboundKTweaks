@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.views.recyclerview;
 import androidx.appcompat.widget.AppCompatTextView;
 import android.view.View;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 

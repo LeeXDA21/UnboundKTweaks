@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.views.recyclerview.overallstatistics;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.kernel.cpu.Temperature;
 import com.thunder.thundertweaks.views.recyclerview.RecyclerViewItem;

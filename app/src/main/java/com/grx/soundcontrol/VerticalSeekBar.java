@@ -74,7 +74,7 @@ import java.lang.reflect.Method;
 
 import androidx.appcompat.widget.AppCompatSeekBar;
 import androidx.core.view.ViewCompat;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 
 public class VerticalSeekBar extends AppCompatSeekBar {

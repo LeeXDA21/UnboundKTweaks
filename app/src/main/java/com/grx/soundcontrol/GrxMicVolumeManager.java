@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.SwitchCompat;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.database.Settings;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.kernel.sound.MoroSound;

@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.views.recyclerview;
 import androidx.appcompat.widget.AppCompatButton;
 import android.view.View;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by willi on 28.09.17.

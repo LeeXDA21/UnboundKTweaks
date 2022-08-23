@@ -45,8 +45,8 @@ import android.view.Display;
 import android.view.View;
 import android.widget.Toast;
 
-import com.hades.hKtweaks.BuildConfig;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.BuildConfig;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.StartActivity;
 import com.thunder.thundertweaks.activities.StartActivityMaterial;
 import com.thunder.thundertweaks.utils.root.RootFile;

@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat;
 import android.content.Context;
 import android.util.SparseArray;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.tools.OnBootFragment;
 import com.thunder.thundertweaks.fragments.DescriptionFragment;

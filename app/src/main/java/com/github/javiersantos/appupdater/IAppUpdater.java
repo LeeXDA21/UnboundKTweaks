@@ -89,6 +89,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setTitleOnUpdateAvailable(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogTitleWhenUpdateAvailable(@NonNull String title);
 
     /**
@@ -98,6 +99,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setTitleOnUpdateAvailable(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogTitleWhenUpdateAvailable(@StringRes int textResource);
 
     /**
@@ -123,6 +125,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setContentOnUpdateAvailable(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogDescriptionWhenUpdateAvailable(@NonNull String description);
 
     /**
@@ -132,6 +135,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setContentOnUpdateAvailable(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogDescriptionWhenUpdateAvailable(@StringRes int textResource);
 
     /**
@@ -157,6 +161,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setTitleOnUpdateNotAvailable(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogTitleWhenUpdateNotAvailable(@NonNull String title);
 
     /**
@@ -166,6 +171,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setTitleOnUpdateNotAvailable(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogTitleWhenUpdateNotAvailable(@StringRes int textResource);
 
     /**
@@ -174,6 +180,7 @@ public interface IAppUpdater {
      * @param title for the dialog
      * @return this
      */
+    @Deprecated
     AppUpdater setTitleOnUpdateNotAvailable(@NonNull String title);
 
     /**
@@ -182,6 +189,7 @@ public interface IAppUpdater {
      * @param textResource resource from the strings xml file for the dialog
      * @return this
      */
+    @Deprecated
     AppUpdater setTitleOnUpdateNotAvailable(@StringRes int textResource);
 
     /**
@@ -191,6 +199,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setContentOnUpdateNotAvailable(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogDescriptionWhenUpdateNotAvailable(@NonNull String description);
 
     /**
@@ -200,6 +209,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setContentOnUpdateNotAvailable(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogDescriptionWhenUpdateNotAvailable(@StringRes int textResource);
 
     /**
@@ -225,6 +235,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setButtonUpdate(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogButtonUpdate(@NonNull String text);
 
     /**
@@ -234,6 +245,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setButtonUpdate(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogButtonUpdate(@StringRes int textResource);
 
     /**
@@ -259,6 +271,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setButtonDismiss(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogButtonDismiss(@NonNull String text);
 
     /**
@@ -268,6 +281,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated  use {@link #setButtonDismiss(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogButtonDismiss(@StringRes int textResource);
 
     /**
@@ -293,6 +307,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setButtonDoNotShowAgain(String)} instead
      */
+    @Deprecated
     AppUpdater setDialogButtonDoNotShowAgain(@NonNull String text);
 
     /**
@@ -302,6 +317,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #setButtonDoNotShowAgain(int)} instead
      */
+    @Deprecated
     AppUpdater setDialogButtonDoNotShowAgain(@StringRes int textResource);
 
     /**
@@ -368,6 +384,7 @@ public interface IAppUpdater {
      * @return this
      * @deprecated use {@link #start()} instead
      */
+    @Deprecated
     AppUpdater init();
 
     /**

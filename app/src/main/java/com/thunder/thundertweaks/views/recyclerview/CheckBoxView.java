@@ -4,7 +4,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import android.view.View;
 import android.widget.CheckBox;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 import java.util.ArrayList;
 import java.util.List;

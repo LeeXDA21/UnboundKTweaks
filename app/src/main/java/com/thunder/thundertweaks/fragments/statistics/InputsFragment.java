@@ -19,7 +19,7 @@
  */
 package com.thunder.thundertweaks.fragments.statistics;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.Device;
 import com.thunder.thundertweaks.views.recyclerview.DescriptionView;

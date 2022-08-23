@@ -23,7 +23,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.ViewUtils;
 import com.thunder.thundertweaks.utils.tools.SupportedDownloads;

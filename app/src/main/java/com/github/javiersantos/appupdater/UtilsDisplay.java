@@ -14,7 +14,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
 import com.google.android.material.snackbar.Snackbar;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 import java.net.URL;
 

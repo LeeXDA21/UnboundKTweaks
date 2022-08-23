@@ -26,7 +26,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import android.text.method.MovementMethod;
 import android.view.View;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by willi on 17.04.16.

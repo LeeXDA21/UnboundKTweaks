@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.fragments.kernel;
 import android.text.InputType;
 import android.util.SparseArray;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.BaseFragment;
 import com.thunder.thundertweaks.fragments.DescriptionFragment;

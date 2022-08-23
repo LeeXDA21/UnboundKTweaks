@@ -23,7 +23,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Utils;
 
 /**

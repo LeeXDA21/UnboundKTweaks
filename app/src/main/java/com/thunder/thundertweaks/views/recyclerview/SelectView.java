@@ -23,7 +23,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.views.dialog.Dialog;
 
 import java.util.ArrayList;

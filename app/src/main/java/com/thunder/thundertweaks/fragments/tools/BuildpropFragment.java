@@ -37,7 +37,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.BaseFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.Utils;

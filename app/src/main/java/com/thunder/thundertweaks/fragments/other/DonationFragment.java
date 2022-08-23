@@ -1,6 +1,6 @@
 package com.thunder.thundertweaks.fragments.other;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.views.recyclerview.DescriptionView;

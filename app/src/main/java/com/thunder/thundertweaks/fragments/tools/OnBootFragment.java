@@ -19,7 +19,7 @@
  */
 package com.thunder.thundertweaks.fragments.tools;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.database.Settings;
 import com.thunder.thundertweaks.database.tools.customcontrols.Controls;
 import com.thunder.thundertweaks.database.tools.profiles.Profiles;

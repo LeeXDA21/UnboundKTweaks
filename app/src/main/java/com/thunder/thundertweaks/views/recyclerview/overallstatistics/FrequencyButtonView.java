@@ -25,7 +25,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.views.recyclerview.RecyclerViewItem;
 
 /**

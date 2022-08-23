@@ -52,7 +52,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.BannerResizerActivity;
 import com.thunder.thundertweaks.activities.MainActivity;
 import com.thunder.thundertweaks.activities.NavigationActivity;

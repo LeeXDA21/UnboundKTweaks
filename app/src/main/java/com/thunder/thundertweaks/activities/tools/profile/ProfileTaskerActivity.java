@@ -23,9 +23,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.hades.hKtweaks.BuildConfig;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.BuildConfig;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.BaseActivity;
 import com.thunder.thundertweaks.database.tools.profiles.Profiles;
 import com.thunder.thundertweaks.fragments.tools.ProfileFragment;

@@ -30,7 +30,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.ViewUtils;
 
 public class BorderCircleView extends FrameLayout {

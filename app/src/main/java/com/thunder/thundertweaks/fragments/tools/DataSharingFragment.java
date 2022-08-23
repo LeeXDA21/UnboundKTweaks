@@ -28,7 +28,7 @@ import android.graphics.drawable.Drawable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.DataSharingSearchActivity;
 import com.thunder.thundertweaks.fragments.DescriptionFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;

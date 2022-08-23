@@ -23,7 +23,7 @@ import android.text.InputType;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;

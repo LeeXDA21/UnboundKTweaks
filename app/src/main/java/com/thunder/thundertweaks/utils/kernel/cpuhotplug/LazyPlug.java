@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.utils.kernel.cpuhotplug;
 
 import android.content.Context;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.root.Control;

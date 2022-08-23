@@ -34,7 +34,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Themes;
 import com.thunder.thundertweaks.utils.Utils;

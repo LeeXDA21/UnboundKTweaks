@@ -25,7 +25,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.DescriptionFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;

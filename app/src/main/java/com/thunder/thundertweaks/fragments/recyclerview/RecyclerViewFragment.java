@@ -54,7 +54,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.BaseActivity;
 import com.thunder.thundertweaks.activities.NavigationActivity;
 import com.thunder.thundertweaks.fragments.BaseFragment;

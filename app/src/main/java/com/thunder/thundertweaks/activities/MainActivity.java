@@ -36,7 +36,7 @@ import android.content.pm.PackageManager;
 import com.thunder.thundertweaks.utils.Log;
 import com.thunder.thundertweaks.database.tools.profiles.Profiles;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.database.tools.profiles.Profiles;
 import com.thunder.thundertweaks.fragments.kernel.BusCamFragment;
 import com.thunder.thundertweaks.fragments.kernel.BusDispFragment;

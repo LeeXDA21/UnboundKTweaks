@@ -5,7 +5,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by Morogoku on 08.12.17.

@@ -37,7 +37,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.BaseActivity;
 import com.thunder.thundertweaks.activities.NavigationActivity;
 import com.thunder.thundertweaks.database.Settings;

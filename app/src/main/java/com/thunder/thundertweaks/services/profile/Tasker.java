@@ -25,7 +25,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.services.boot.ApplyOnBoot;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Log;

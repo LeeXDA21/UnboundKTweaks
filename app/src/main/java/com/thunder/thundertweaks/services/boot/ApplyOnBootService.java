@@ -33,7 +33,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import androidx.annotation.Nullable;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.AppUpdaterTask;
 import com.thunder.thundertweaks.utils.Device;

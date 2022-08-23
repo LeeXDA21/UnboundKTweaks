@@ -23,7 +23,7 @@ import androidx.annotation.StringRes;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by willi on 22.06.16.

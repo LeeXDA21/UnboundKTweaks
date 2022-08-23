@@ -30,7 +30,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.DownloadTask;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.ViewUtils;

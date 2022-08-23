@@ -23,7 +23,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import androidx.fragment.app.Fragment;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 
 /**
  * Created by willi on 11.03.18.

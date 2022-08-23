@@ -36,7 +36,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.FilePickerActivity;
 import com.thunder.thundertweaks.fragments.BaseFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;

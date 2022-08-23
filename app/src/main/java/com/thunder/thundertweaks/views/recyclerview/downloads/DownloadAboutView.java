@@ -23,7 +23,7 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Utils;
 import com.thunder.thundertweaks.utils.tools.SupportedDownloads;
 import com.thunder.thundertweaks.views.recyclerview.RecyclerViewItem;

@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.server.DeviceInfo;
 import com.thunder.thundertweaks.views.dialog.Dialog;
 import com.thunder.thundertweaks.views.recyclerview.RecyclerViewItem;

@@ -31,7 +31,7 @@ import android.util.SparseArray;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.database.tools.profiles.Profiles;
 import com.thunder.thundertweaks.services.boot.ApplyOnBoot;
 import com.thunder.thundertweaks.utils.Utils;

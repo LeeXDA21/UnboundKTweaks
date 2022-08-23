@@ -3,7 +3,7 @@ package com.thunder.thundertweaks.fragments.kernel;
 import android.util.SparseArray;
 import android.text.InputType;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.Utils;

@@ -21,7 +21,7 @@ package com.thunder.thundertweaks.fragments.other;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.WebpageReader;
 import com.thunder.thundertweaks.utils.other.Contributors;

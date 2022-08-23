@@ -22,7 +22,7 @@ package com.thunder.thundertweaks.utils.kernel.battery;
 import android.content.Context;
 import androidx.annotation.NonNull;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.utils.AppSettings;
 import com.thunder.thundertweaks.utils.Utils;

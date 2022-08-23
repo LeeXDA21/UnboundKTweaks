@@ -23,7 +23,7 @@ import android.content.Intent;
 
 import com.google.android.apps.dashclock.api.DashClockExtension;
 import com.google.android.apps.dashclock.api.ExtensionData;
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.MainActivity;
 import com.thunder.thundertweaks.utils.kernel.cpu.CPUFreq;
 import com.thunder.thundertweaks.utils.kernel.gpu.GPUFreq;

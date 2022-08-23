@@ -4,7 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import android.view.View;
 import android.widget.CheckBox;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.fragments.ApplyOnBootFragment;
 import com.thunder.thundertweaks.fragments.recyclerview.RecyclerViewFragment;
 import com.thunder.thundertweaks.utils.AppSettings;

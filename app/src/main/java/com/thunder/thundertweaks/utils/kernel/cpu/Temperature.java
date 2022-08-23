@@ -23,7 +23,7 @@ import android.content.Context;
 import com.thunder.thundertweaks.utils.Log;
 import android.os.Build;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.utils.Device;
 import com.thunder.thundertweaks.utils.Utils;
 

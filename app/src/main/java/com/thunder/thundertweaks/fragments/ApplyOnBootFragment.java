@@ -28,7 +28,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.hades.hKtweaks.R;
+import com.unbound.UnboundKtweaks.R;
 import com.thunder.thundertweaks.activities.tools.profile.ProfileActivity;
 import com.thunder.thundertweaks.fragments.kernel.BatteryFragment;
 import com.thunder.thundertweaks.fragments.kernel.BoefflaWakelockFragment;
