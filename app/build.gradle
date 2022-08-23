@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 31
+    compileSdk 32
     buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId 'com.hades.hKtweaks'
-        minSdk 29
-        targetSdk 31
+        minSdk 31
+        targetSdk 32
         versionCode 222
         versionName "2.2.2"
         vectorDrawables.useSupportLibrary = true
@@ -19,18 +19,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     productFlavors {
     }
     lint {
         abortOnError false
     }
-    namespace 'com.hades.hKtweaks'
+    namespace 'com.unbound.UnboundKtweaks'
     android.applicationVariants.all { final variant ->
         variant.outputs.all {
-            outputFileName = "hKtweaks_v${variant.versionName}.apk"
+            outputFileName = "uKTweaks_v${variant.versionName}.apk"
         }
     }
 }
@@ -48,11 +48,11 @@ dependencies {
         transitive = true
     }
 
-    implementation 'androidx.core:core:1.7.0'
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.core:core:1.8.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.7.0-alpha01'
+    implementation 'com.google.android.material:material:1.7.0-beta01'
     implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.apps.dashclock:dashclock-api:2.0.0'
